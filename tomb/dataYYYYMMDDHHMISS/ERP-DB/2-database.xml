@@ -1,0 +1,324 @@
+<DB_HEALTH_CHECK_DATA versoin="0.2">
+<DATABASE type="Oracle">
+  <INSTANCE>
+    <HC_DB_NAME          v="ORCL"/>
+    <HC_DB_ID            v="1588313914"/>
+    <HC_DB_VERSION       v="19.0.0.0.0"/>
+    <HC_INSTANCE_NAME    v="oracle"/>
+    <HC_IS_RAC           v="NO"/>
+    <HC_INSTANCE_COUNT   v="1"/>
+    <HC_DB_CHARSET      v="ZHS16GBK"/>
+    <HC_LOG_MODE         v="ARCHIVELOG"/>
+    <HC_SGA_SIZE         v="8000 MB"/>
+    <HC_DB_BLOCK_SIZE    v="8192"/>
+    <HC_TABLESPACE_COUNT v="5"/>
+    <HC_DB_USED_SPACE    v="2315 MB"/>
+    <HC_DATAFILE_COUNT   v="4"/>
+    <HC_TEMPFILE_COUNT   v="1"/>
+    <HC_CONTROL_NUM      v="2"/>
+    <HC_REDO_MINSIZE     v="200 MB"/>
+    <HC_REDO_GROUPS      v="3"/>
+    <HC_REDO_MEMBERS     v="1"/>
+    <HC_PARAM_PROCESSES  v="640"/>
+    <HC_MAX_CONNECTIONS  v="103"/>
+    <HC_DB_PARAMETERS>
+    audit_file_dest                /u01/app/oracle/admin/orcl/adump
+    audit_trail                    DB
+    compatible                     19.0.0
+    control_files                  /u01/app/oracle/oradata/ORCL/control01.ctl, /u01/a
+    db_block_size                  8192
+    db_name                        orcl
+    diagnostic_dest                /u01/app/oracle
+    dispatchers                    (PROTOCOL=TCP) (SERVICE=orclXDB)
+    local_listener                 LISTENER_ORCL
+    log_archive_dest_1             location=/u01/app/oracle/arch
+    nls_language                   AMERICAN
+    nls_territory                  AMERICA
+    open_cursors                   300
+    pga_aggregate_target           2795503616
+    processes                      640
+    remote_login_passwordfile      EXCLUSIVE
+    sga_target                     8388608000
+    undo_tablespace                UNDOTBS1
+    </HC_DB_PARAMETERS>
+  </INSTANCE>
+
+  <DB_FILES>
+    <HC_CONTROL_FILES>
+    NAME                                                         FILE_SIZE
+    ------------------------------------------------------------ ----------
+    /u01/app/oracle/oradata/ORCL/control01.ctl                   10M
+    /u01/app/oracle/oradata/ORCL/control02.ctl                   10M
+    </HC_CONTROL_FILES>
+    <HC_REDO_FILES>
+    GROUP# TYPE    MEMBER
+    ------ ------- --------------------------------------------------
+         1 ONLINE  /u01/app/oracle/oradata/ORCL/redo01.log
+         2 ONLINE  /u01/app/oracle/oradata/ORCL/redo02.log
+         3 ONLINE  /u01/app/oracle/oradata/ORCL/redo03.log
+    </HC_REDO_FILES>
+    <HC_REDO_ROTATE>
+       THREAD# GROUP#      BYTES SEQUENCE# STATUS           FIRST_TIME
+    ---------- ------ ---------- --------- ---------------- -------------------
+             1      3  209715200        30 INACTIVE         2021-03-19 08:00:54
+             1      1  209715200        31 INACTIVE         2021-04-15 11:30:54
+             1      2  209715200        32 CURRENT          2021-04-15 12:00:04
+    </HC_REDO_ROTATE>
+    <HC_REDO_SWITCH_COUNT>
+    THREAD# FIRST_TIME             COUNT(*)
+    ------- -------------------- ----------
+          1 2021-03-16                    1
+          1 2021-03-17                    1
+          1 2021-03-18                    1
+          1 2021-03-19                    1
+    </HC_REDO_SWITCH_COUNT>
+    <HC_TABLESPACE_USAGE>
+    TABLESPACE_NAME    SIZE_GB PERCEN
+    ------------------ ------- ------
+    SYSTEM                  32 2.8%
+    SYSAUX                  32 2.1%
+    TEMP                    32 0%
+    USERS                   32 0%
+    </HC_TABLESPACE_USAGE>
+    <HC_DATA_FILES>
+    FILE_NAME                                          SIZE_MB TABLESPACE_NAME AUT
+    -------------------------------------------------- ------- --------------- ---
+    /u01/app/oracle/oradata/ORCL/system01.dbf              930 SYSTEM          YES
+    /u01/app/oracle/oradata/ORCL/sysaux01.dbf             1040 SYSAUX          YES
+    /u01/app/oracle/oradata/ORCL/users01.dbf                 5 USERS           YES
+    /u01/app/oracle/oradata/ORCL/undotbs01.dbf             340 UNDOTBS1        YES
+    </HC_DATA_FILES>
+    <HC_ARCHIVE_DEST     v=""/>
+    <HC_RECYCLEBIN_USED  v="0 MB"/>
+    <HC_AWR_HOLD_DAYS    v="8"/>
+  </DB_FILES>
+
+  <DB_OBJECTS>
+    <HC_INVALID_OBJECTS    v="0"/>
+    <HC_BIG_TABLES>
+    </HC_BIG_TABLES>
+    <HC_SQL_NOT_BIND>
+    </HC_SQL_NOT_BIND>
+    <HC_SQL_VC_INFO>
+        VC SQL_ID         sqltext
+    ------ -------------- ------------------------------------------------------------
+         2 7b5rcf824mzf1  with sqt as (   select to_clob(restart||owner||'.'||name) ru
+         2 3htmw0z62vx1y  with sqt as (      select e.latch_name    parent          ,
+         2 g4d3jqstvm85w  with sqt as (      select /*+ ordered use_hash(b) */
+         2 0naaatkt81cg0  with sqt as     (select owner, tablespace_name, object_name,
+         2 gkx627a6acs3q  with sqt as     (select owner, tablespace_name, object_name,
+         2 1pkbgf9bczk3j  with sqt as     (select owner, tablespace_name, object_name,
+         2 2j118ng7jgsb4  with sqt as       (select owner, tablespace_name, object_nam
+         2 f1j9z2tnpugk4  with sqt as       (select owner, tablespace_name, object_nam
+         2 2cwyh4xrzp2ty  with sqt as       (select owner, tablespace_name, object_nam
+         2 5kqbjhq89sufh  with sqt as       (select exec, version_count, sql_id, modul
+    </HC_SQL_VC_INFO>
+    <HC_SGA_INFO>
+    NAME                                          BYTES RES     CON_ID
+    ---------------------------------------- ---------- --- ----------
+    Fixed SGA Size                              8916512 No           0
+    Redo Buffers                                7860224 No           0
+    Buffer Cache Size                        7012876288 Yes          0
+    In-Memory Area Size                               0 No           0
+    Shared Pool Size                         1325400064 Yes          0
+    Large Pool Size                            33554432 Yes          0
+    Java Pool Size                                    0 Yes          0
+    Streams Pool Size                                 0 Yes          0
+    Shared IO Pool Size                       134217728 Yes          0
+    Data Transfer Cache Size                          0 Yes          0
+    Granule Size                               16777216 No           0
+    Maximum SGA Size                         8388607520 No           0
+    Startup overhead in Shared Pool           342603208 No           0
+    Free SGA Memory Available                         0              0
+    </HC_SGA_INFO>
+  </DB_OBJECTS>
+
+  <AWR>
+    <HC_AWR_HEAD>
+    Begin Snap:       469 15-Apr-21 17:00:54        62       1.4
+      End Snap:       471 15-Apr-21 19:00:07        62       1.5
+       Elapsed:              119.22 (mins)
+       DB Time:                0.30 (mins)
+    </HC_AWR_HEAD>
+
+    <HC_AWR_PROFILE>
+    Load Profile                    Per Second   Per Transaction  Per Exec  Per Call
+    ~~~~~~~~~~~~~~~            ---------------   --------------- --------- ---------
+                 DB Time(s):               0.0               0.2      0.00      0.00
+                  DB CPU(s):               0.0               0.2      0.00      0.00
+          Background CPU(s):               0.0               0.8      0.00      0.00
+          Redo size (bytes):           1,618.8         154,387.9
+      Logical read (blocks):             275.6          26,281.1
+              Block changes:              20.6           1,959.8
+     Physical read (blocks):               1.2             118.3
+    Physical write (blocks):               0.4              39.6
+           Read IO requests:               0.5              48.6
+          Write IO requests:               0.2              21.5
+               Read IO (MB):               0.0               0.9
+              Write IO (MB):               0.0               0.3
+               IM scan rows:               0.0               0.0
+    Session Logical Read IM:               0.0               0.0
+                 User calls:               0.6              53.1
+               Parses (SQL):               8.4             801.1
+          Hard parses (SQL):               0.2              14.9
+         SQL Work Area (MB):               0.5              45.9
+                     Logons:               0.0               1.0
+                User logons:               0.0               0.4
+             Executes (SQL):               9.2             877.1
+    </HC_AWR_PROFILE>
+
+    <HC_AWR_TOPEVENTS>
+    Top 10 Foreground Events by Total Wait Time
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                               Total Wait       Avg   % DB Wait
+    Event                                Waits Time (sec)      Wait   time Class
+    ------------------------------ ----------- ---------- --------- ------ --------
+    DB CPU                                           18.2            101.0
+    Disk file operations I/O             6,308         .2   33.39us    1.2 User I/O
+    ADR block file read                     36         .1    3.07ms     .6 Other
+    PGA memory operation                 3,377          0    7.43us     .1 Other
+    direct path read                     1,902          0    8.03us     .1 User I/O
+    SQL*Net more data to client          1,428          0    6.73us     .1 Network
+    control file sequential read         1,284          0    4.22us     .0 System I
+    SQL*Net message to client            2,904          0  552.69ns     .0 Network
+    db file sequential read                182          0    8.71us     .0 User I/O
+    asynch descriptor resize                24          0    5.88us     .0 Other
+    
+    --
+    Top SQL with Top Events                   DB/Inst: ORCL/oracle  Snaps: 469-471
+    -) Top SQL statements by DB Time along with the top events by DB Time
+       for those SQLs.
+    -) % Activity is the percentage of DB Time due to the SQL.
+    -) % Event is the percentage of DB Time due to the event that the SQL is
+       waiting on.
+    -) % Row Source is the percentage of DB Time due to the row source for the
+       SQL waiting on the event.
+    -) Executions is the number of executions of the SQL that were sampled in ASH.
+    
+                     SQL ID            Plan Hash           Executions     % Activity
+    ----------------------- -------------------- -------------------- --------------
+                                                                               % Row
+    Event                          % Event Top Row Source                     Source
+    ------------------------------ ------- --------------------------------- -------
+              a20f6yvmwpqph           1787376976                    0          20.00
+    --
+    Top Events                                DB/Inst: ORCL/oracle  Snaps: 469-471
+    -) Top Events by DB Time
+    -) % Activity is the percentage of DB Time due to the event
+    
+    Event                               Event Class     Session Type
+    ----------------------------------- --------------- ---------------
+               Avg Active
+    % Activity   Sessions
+    ---------- ----------
+    CPU + Wait for CPU                  CPU             BACKGROUND
+         80.00       0.01
+    CPU + Wait for CPU                  CPU             FOREGROUND
+         20.00       0.00
+                              ------------------------------------------------------
+    
+    Top Event P1/P2/P3 Values                 DB/Inst: ORCL/oracle  Snaps: 469-471
+    </HC_AWR_TOPEVENTS>
+
+    <HC_AWR_TBS_IO>
+    Tablespace IO Stats                       DB/Inst: ORCL/oracle  Snaps: 469-471
+    
+                      No data exists for this section of the report.
+                              ------------------------------------------------------
+    
+    
+    
+    File IO Stats                             DB/Inst: ORCL/oracle  Snaps: 469-471
+    
+                      No data exists for this section of the report.
+                              ------------------------------------------------------
+    
+    
+    
+    Buffer Pool Statistics                    DB/Inst: ORCL/oracle  Snaps: 469-471
+    -) Standard block size Pools  D: default,  K: keep,  R: recycle
+    -) Default Pools for other block sizes: 2k, 4k, 8k, 16k, 32k
+    
+                                                                Free   Writ   Buffer
+         Number of Pool       Buffer     Physical    Physical   Buff   Comp     Busy
+    P      Buffers Hit%         Gets        Reads      Writes   Wait   Wait    Waits
+    </HC_AWR_TBS_IO>
+
+    <HC_AWR_TABLESCAN>
+    table fetch by rowid                        877,733          122.7      11,703.1
+    table fetch continued row                     1,690            0.2          22.5
+    table scan blocks gotten                    225,243           31.5       3,003.2
+    table scan disk non-IMC rows got         10,006,122        1,398.9     133,415.0
+    table scan rows gotten                   10,006,122        1,398.9     133,415.0
+    table scans (long tables)                         0            0.0           0.0
+    table scans (short tables)                    4,086            0.6          54.5
+    </HC_AWR_TABLESCAN>
+
+    <HC_AWR_TOP_GETS>
+    SQL ordered by Gets                       DB/Inst: ORCL/oracle  Snaps: 469-471
+    -) Resources reported for PL/SQL code includes the resources used by all SQL
+       statements called by the code.
+    -) %Total - Buffer Gets   as a percentage of Total Buffer Gets
+    -) %CPU   - CPU Time      as a percentage of Elapsed Time
+    -) %IO    - User I/O Time as a percentage of Elapsed Time
+    -) Total Buffer Gets:       1,971,083
+    -) Captured SQL account for  106.0% of Total
+    
+         Buffer                 Gets              Elapsed
+          Gets   Executions   per Exec   %Total   Time (s)  %CPU   %IO    SQL Id
+    ----------- ----------- ------------ ------ ---------- ----- ----- -------------
+        819,537           6    136,589.5   41.6       11.2  99.8    .8 8xs6max9zsaad
+    Module: sqlplus@tongzh-oracle19c-singlenode (TNS V1-V3)
+    select dbms_workload_repository.awr_report( :dbid,
+     :inst_num, :bid, :eid
+    , :rpt_options,
+     'html' ) from dual
+    
+        405,062           1    405,062.0   20.6       18.9  99.6    .2 05s9358mm6vrr
+    begin dbms_feature_usage_internal.exec_db_usage_sampling(:bind1); end;
+    
+        399,527           6     66,587.8   20.3        4.6  99.9   1.9 4x2fkcq2kgbc2
+    Module: sqlplus@tongzh-oracle19c-singlenode (TNS V1-V3)
+    select dbms_workload_repository.awr_report( :dbid,
+     :inst_num, :bid, :eid
+    , :rpt_options,
+     'text' ) from dual
+    
+        268,931           6     44,821.8   13.6        4.2  99.9   2.1 cr8mvndwmr7nt
+    Module: sqlplus@tongzh-oracle19c-singlenode (TNS V1-V3)
+    --
+    SQL ordered by Gets                       DB/Inst: ORCL/oracle  Snaps: 469-471
+    -) Resources reported for PL/SQL code includes the resources used by all SQL
+       statements called by the code.
+    -) %Total - Buffer Gets   as a percentage of Total Buffer Gets
+    -) %CPU   - CPU Time      as a percentage of Elapsed Time
+    -) %IO    - User I/O Time as a percentage of Elapsed Time
+    -) Total Buffer Gets:       1,971,083
+    -) Captured SQL account for  106.0% of Total
+    
+         Buffer                 Gets              Elapsed
+          Gets   Executions   per Exec   %Total   Time (s)  %CPU   %IO    SQL Id
+    ----------- ----------- ------------ ------ ---------- ----- ----- -------------
+         22,233           1     22,233.0    1.1        0.5   100     0 5207cx6b6njnh
+    select count(1) from dba_views where upper(text_vc) like '%
+    JSON_EXISTS%' and owner not in (select distinct username fr
+    om all_users where oracle_maintained = 'Y')
+    
+                              ------------------------------------------------------
+    
+    
+    
+    SQL ordered by Reads                      DB/Inst: ORCL/oracle  Snaps: 469-471
+    -) %Total - Physical Reads as a percentage of Total Disk Reads
+    -) %CPU   - CPU Time      as a percentage of Elapsed Time
+    -) %IO    - User I/O Time as a percentage of Elapsed Time
+    -) Total Disk Reads:           8,871
+    -) Captured SQL account for  123.8% of Total
+    
+       Physical              Reads              Elapsed
+          Reads  Executions per Exec   %Total   Time (s)   %CPU    %IO    SQL Id
+    ----------- ----------- ---------- ------ ---------- ------ ------ -------------
+    </HC_AWR_TOP_GETS>
+  </AWR>
+</DATABASE>
+</DB_HEALTH_CHECK_DATA>
