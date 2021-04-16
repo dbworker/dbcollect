@@ -17,7 +17,7 @@ variable v_vernum number;
 variable v_alertpath varchar2(100);
 exec select to_number(substr(version,1,4)) into :v_vernum from v$instance;
 exec select value into :v_alertpath from v$parameter where name='background_dump_dest';
-exec if :v_vernum >10 then select value into :v_alertpath from v$diag_info where name='Diag Trace'; end if;
+exec if :v_vernum >=11.2 then select value into :v_alertpath from v$diag_info where name='Diag Trace'; end if;
 print :v_alertpath
 select 'alert_' || instance_name || '.log' name from v$instance;
 
