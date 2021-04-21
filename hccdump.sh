@@ -15,7 +15,7 @@ mRelease="20210415"
 # for safety, only run hccdump.sh in install directory
 if [ "$0" != "hccdump.sh"  ]; then
     echo "usage:"
-    echo "    cd /path/to/dbtutil"
+    echo "    cd /path/to/dbcollect"
     echo "    sh hccdump.sh"
     echo "don't use abosolute path or relative path! pls cd to install path."
     exit -1
