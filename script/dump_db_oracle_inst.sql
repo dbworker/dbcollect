@@ -47,6 +47,7 @@ select '    <HC_REDO_MINSIZE     v="' || ROUND(MIN(BYTES)/1024/1024)||' MB"/>' |
        '    <HC_REDO_MEMBERS     v="' || MIN(MEMBERS)||'"/>'    from v$log ;
 select '    <HC_PARAM_PROCESSES  v="' || value    ||'"/>'       from v$parameter where name='processes';
 select '    <HC_MAX_CONNECTIONS  v="' || max_utilization||'"/>' from v$resource_limit where resource_name='processes';
+select '    <HC_TABLESPACE_UMAX  v="' || round(max(used_percent), 1)||'"/>' from dba_tablespace_usage_metrics;
 
 set lines 200 pages 200
 col name for a30
@@ -95,11 +96,13 @@ prompt <HC_TABLESPACE_USAGE>
 col tablespace_name for a18
 col Size_GB for 999999
 col percent for a6
-select '   ',tablespace_name,
-    round(tablespace_size * value / 1073741824) Size_GB,
-    round(used_percent, 1)||'%' percent
-  from dba_tablespace_usage_metrics, v$parameter
-    where name = 'db_block_size' order by used_percent desc;
+select * from (
+  select '   ',tablespace_name,
+      round(tablespace_size * value / 1073741824) Size_GB,
+      round(used_percent, 1)||'%' percent
+    from dba_tablespace_usage_metrics, v$parameter
+      where name = 'db_block_size' order by used_percent desc
+) where rownum <= 15;
 prompt </HC_TABLESPACE_USAGE>
 
 
@@ -168,7 +171,7 @@ col vc for 99999
 col sql_id for a14
 col sqltext for a60
 prompt <HC_SQL_VC_INFO>
-select * from (select '   ',VERSION_COUNT vc, SQL_ID,substr(SQL_TEXT,1,60) "sqltext" from v$sqlarea order by SQL_TEXT desc) where rownum<=10;
+select * from (select '   ',VERSION_COUNT vc, SQL_ID,substr(SQL_TEXT,1,60) "SQL_TEXT" from v$sqlarea order by VERSION_COUNT desc) where rownum<=10;
 prompt </HC_SQL_VC_INFO>
 
 col name for a40
@@ -177,6 +180,10 @@ select '   ', t.* from v$sgainfo t;
 prompt </HC_SGA_INFO>
 
 set heading off
+select '    <HC_SQL_VC_MAX  v="' || max(VERSION_COUNT) || '"/>' from v$sqlarea;
+select '    <HC_DB_AUDTAB_SIZE  v="' || round(bytes/1048576) || '"/>' from dba_segments where segment_name='AUD$' and rownum=1;
+
+
 select '  </DB_OBJECTS>' ||  chr(10)||
        '</DATABASE>'     ||  chr(10)||
        '</DB_HEALTH_CHECK_DATA>'  from dual;
