@@ -97,8 +97,8 @@ sqlplus -S "/ as sysdba" << EOF
     set echo off feedback off trimspool on trimout on
     set heading off
     spool pdblist.tmp
-    col name for a20
-    select name from v$pdbs;
+    col pdb_name for a20
+    select lower(pdb_name) "pdb_name" from dba_pdbs;
     spool off
 EOF
 
@@ -117,20 +117,22 @@ mCfgFileName=`head -$mDbIndex cfg.out|tail -1`
 
 # is valid sid/pdb name?
 mIsPDB=0
-mSid=`grep -i ORACLE_SID $mCfgFileName|sed 's/ORACLE_SID//g;s/= "//g'`
+mSid=`grep -i ORACLE_SID $mCfgFileName|sed 's/ORACLE_SID//g;s/[]= "]//g'`
 # to fully match, distinguish crm / crmdb
 mTmp=`awk -v sid="$mSid" '{if($0 == sid) print $0}' sidlist.tmp|wc -l`
+echo "tmp = $mTmp"
 if [ "$mTmp" == "1" ]; then
     export ORACLE_SID="$mSid"
 else
-    mTmp=`awk -v sid="$mSid" '{if($0 == sid) print $0}' pidlist.tmp|wc -l`
+    mTmp=`awk -v sid="$mSid" '{if($0 == sid) print $0}' pdblist.tmp|wc -l`
+    echo "tmp = $mTmp"
     if [ "$mTmp" == "1" ]; then
         mIsPDB=1
     else
+        mDbIndex=` expr $mDbIndex + 1 `
         continue;
     fi
 fi
-
 
 # get db alias string and filter special char
 grep db_alias "$mCfgFileName" > safe.tmp
@@ -149,13 +151,6 @@ if [ $mNameLen -eq 0 ]; then
     WLOG "[$0][error] db_alias not exist or invalid in .toml, $0 exit."
     exit -1
 fi
-
-# test connectivity
-# 直连sid, 取数据
-# 否则尝试是否pdb
-
-# 如果
-sqlplus -L -S 
 
 WLOG "[$0][info] dumping $mDbAlias."
 
@@ -185,6 +180,7 @@ EOF
         @../script/get_db_oracle_misc.sql
         --exit
 EOF
+    fi
 
     # indent some space
     FormatOracleXml 2-database.xml
