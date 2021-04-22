@@ -37,7 +37,7 @@ ECHO
 ECHO   "  <HARDWARE>"
 ECHO_C "    <HC_OS_PLATFORM  v=" `uname -p`
 ECHO_C "    <HC_CPU_COUNT    v=" `lsdev -Cc processor | wc -l`
-ECHO_C "    <HC_MEMORY_SIZE  v=" `bootinfo -r|awk '{printf "%d", int($1/1048576)}'`
+ECHO_C "    <HC_MEMORY_SIZE  v=" `prtconf | grep "^Memory Size:" |  awk '{printf $3}'`
 ECHO_C "    <HC_SWAP_SIZE    v=" `lsps -s | tail -1 | awk '{printf "%s", $1}'`
 ECHO_C "    <HC_OS_DF_UMAX   v=" `df -h 2>/dev/null | awk '{printf "%3d\n", $(NF-1)}' | sort -n -r | head -1`
 ECHO_C "    <HC_OS_DF_IUSED  v=" `df    2>/dev/null | awk '{printf "%3d\n", $(NF-2)}' | sort -n -r | head -1`
@@ -51,7 +51,7 @@ ECHO_M      "`svmon -G`"
 ECHO   "    </HC_OS_MEMFREE>"
 
 ECHO   "    <HC_OS_MISC>"
-ECHO_M      "`prtconf | head -30`"
+ECHO_M      "`prtconf | head -25`"
 ECHO   "    </HC_OS_MISC>"
 
 ECHO   "  </HARDWARE>"

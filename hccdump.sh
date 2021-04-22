@@ -9,7 +9,7 @@
 #  FOR SAFETY, ONLY RUN 'hccdump.sh' IN INSTALL DIRECTORY.
 #  ONLY USE `rm` WITH A SPECIFIED FILE.
 #**********************************************************
-mVersion="0.2.1"
+mVersion="0.2.2"
 mRelease="20210422"
 
 # for safety, only run hccdump.sh in install directory
@@ -23,9 +23,12 @@ fi
 
 mToolPath=`pwd`
 
+# some charset/locale will ruin shell output, such as `uptime` on zh_CN
+export LANG=en_US.UTF-8
+
 # 'data/' IS WORKING PATH AND SHOULD NOT CD TO OTHER PATH !!!
 # in data/ path, 
-#   .xml / .log is result file, should move to xxdb/
+#   .xml & .log is result file, should move to xxdb/
 #   .tmp content is volatile (change many times). 
 #   .out is also temp but static after created.
 # dir tree as:
@@ -63,12 +66,12 @@ FormatOracleXml()
     mv sed1.tmp  $1
 }
 
-# in config toml, maybe exist some evil char [ / \ space ; * ~ < > | $ `]
+# in config toml, maybe exist some evil char [ / \ space ; * ~ < > & | $ `]
 # @param cfgFile
 FilterEvilChar()
 {
     sed  's/\///g;s/\\//g;s/ //g;s/\;//g'      $1 > sed1.tmp
-    sed  's/\*//g;s/~//g; s/<//g;s/>//g' sed1.tmp > sed2.tmp
+    sed  's/\*//g;s/[~<>&]//g'           sed1.tmp > sed2.tmp
     sed  's/|//g;s/\$//g;s/`//g'         sed2.tmp > sed1.tmp
     mv sed1.tmp  $1
 }
@@ -88,17 +91,19 @@ AIX)
 ;;
 esac
 
-# handle sid and pdbs
 # save default ORACLE_SID
 mDefaultSID=$ORACLE_SID
 
+# non-PDB sid is case-sensitive, login with 'sqlplus / as sysdba'.
+# PDB sid use uppercase(capital),login CDB then turn to PDB.
+# TODO: many CDBs on a host? too complicated case.
 ps -ef|grep ora_smon_|grep -v grep |awk '{print $NF}'| awk -F_ '{print $NF}' > sidlist.tmp
 sqlplus -S "/ as sysdba" << EOF
     set echo off feedback off trimspool on trimout on
     set heading off
     spool pdblist.tmp
     col pdb_name for a20
-    select lower(pdb_name) "pdb_name" from dba_pdbs;
+    select pdb_name from dba_pdbs;
     spool off
 EOF
 
@@ -117,16 +122,20 @@ mCfgFileName=`head -$mDbIndex cfg.out|tail -1`
 
 # is valid sid/pdb name?
 mIsPDB=0
-mSid=`grep -i ORACLE_SID $mCfgFileName|sed 's/ORACLE_SID//g;s/[]= "]//g'`
+mSid=`grep -i ORACLE_SID $mCfgFileName|sed 's/ORACLE_SID//g;s/[= "]//g'`
 # to fully match, distinguish crm / crmdb
 mTmp=`awk -v sid="$mSid" '{if($0 == sid) print $0}' sidlist.tmp|wc -l`
-echo "tmp = $mTmp"
-if [ "$mTmp" == "1" ]; then
+
+# on AIX, wc -l will return '    1', so turn to number
+mTmp=`expr $mTmp`
+if [ "$mTmp" -eq 1 ]; then
     export ORACLE_SID="$mSid"
 else
+    # maybe a PDB, turn sid to uppercase
+    mSid=`echo $mSid| tr 'a-z' 'A-Z'`
     mTmp=`awk -v sid="$mSid" '{if($0 == sid) print $0}' pdblist.tmp|wc -l`
-    echo "tmp = $mTmp"
-    if [ "$mTmp" == "1" ]; then
+    mTmp=`expr $mTmp`
+    if [ "$mTmp" -eq 1 ]; then
         mIsPDB=1
     else
         mDbIndex=` expr $mDbIndex + 1 `
@@ -136,12 +145,12 @@ fi
 
 # get db alias string and filter special char
 grep db_alias "$mCfgFileName" > safe.tmp
-sed 's/db_alias//g;s/=//g;s/"//g' safe.tmp > sed1.tmp
+sed 's/db_alias//g;s/[=" ]//g' safe.tmp > sed1.tmp
 sed "s/'//g" sed1.tmp > safe.tmp
 FilterEvilChar safe.tmp
 mDbAlias=`head -1 safe.tmp`
 mNameLen=`expr length "$mDbAlias"`
-if [ $mNameLen -gt 50 ]; then
+if [ $mNameLen -gt 60 ]; then
     echo ""
     WLOG "[$0][error] db_alias ($mDbAlias) too long in .toml, $0 exit."
     exit -1
@@ -227,10 +236,16 @@ cd ../
 mTmp=`date +"%Y%m%d%H%M%S"`
 mv data tomb/"data$mTmp"
 mkdir data
-mv *.gz data/
+
+# if no *.gz then mv will print boring message
+mTmp=`ls *.tar.gz|wc -l`
+mTmp=`expr $mTmp`
+if [ "$mTmp" -gt 0 ]; then
+    mv *.tar.gz data/
+fi
 
 # seek last start pos
-mPos=`grep -n " script started" dump.log|awk  -F ':' 'END{print $1}'`
+mPos=`grep -n " script started" dump.log|awk  -F: '{print $1}' | tail -1`
 mTmp=`cat dump.log|wc -l`
 mTmp=`expr "$mTmp" - "$mPos" + 1 `
 echo ""

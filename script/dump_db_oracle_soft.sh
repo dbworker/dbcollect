@@ -30,14 +30,15 @@ sh ../script/sub_readalert.sh
 
 # if not matched, return some lastest log
 mMatchCount=`cat date.tmp|wc -l`
-if [ "$mMatchCount" == "0" ]; then
+mMatchCount=`expr $mMatchCount`
+if [ "$mMatchCount" -eq 0 ]; then
     tail -50000 alert_0.tmp > "$mAlertName"
     WLOG "[$0][info] filter alert log content fail, return last 50000 lines."
 else
     # use date.tmp's first date to locate line in alert.log
     mFirstDate=`head -1 date.tmp`
     grep -n "$mFirstDate" alert_0.tmp |head -1 > date.tmp
-    mPos=`awk -F ':' '{print $1}' date.tmp`
+    mPos=`awk -F: '{print $1}' date.tmp`
     mAll=`cat alert_0.tmp|wc -l`
     mPos=` expr "$mAll" - "$mPos" + 1 `
     tail -$mPos alert_0.tmp > alert_1.tmp

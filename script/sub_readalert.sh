@@ -27,9 +27,10 @@ NormalLogTS()
 {
     grep "$mYearOfLastMon$" alert_0.tmp | grep " $mLastMonAbbr " > date.tmp
     mMatchCount=`cat date.tmp|wc -l`
+    mMatchCount=`expr $mMatchCount`
 
     # if not exist, search current month date string
-    if [ "$mMatchCount" == "0" ]; then
+    if [ "$mMatchCount" -eq 0 ]; then
         grep "$mCurYear$" alert_0.tmp | grep " $mCurMonAbbr " > date.tmp
     fi
 }
@@ -38,9 +39,10 @@ UnifromLogTS()
 {
     grep "^$mYearOfLastMon-$mLastMonNum-" alert_0.tmp  > date.tmp
     mMatchCount=`cat date.tmp|wc -l`
+    mMatchCount=`expr $mMatchCount`
 
     # if not exist, search current month date string
-    if [ "$mMatchCount" == "0" ]; then
+    if [ "$mMatchCount" -eq 0 ]; then
         grep "^$mCurYear-$mCurMonNum-" alert_0.tmp  > date.tmp
     fi
 }

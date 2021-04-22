@@ -1,7 +1,11 @@
 #**********************************************************
 # create oracle AWR report.
 # time range[now-2.5h, now]
-#
+# @input :
+#     2-database.xml
+# @output:
+#     awr.html, awr.txt
+#      2-database.xml
 #**********************************************************
 
 WLOG()
@@ -70,9 +74,9 @@ sed  "/<\/DB_HEALTH_CHECK_DATA>/d" sed1.tmp > 2-database.xml
 # AWR report special char
 # replace '<' and '>', which will confuse XML Parser?
 # char '^L' (0x0C, formfeed, '\f'), not allowed by XML Parser
-mTmp=`tail -1 awrauto.tmp`
-sed  's/\x0c/\x0a/g'  "$mTmp" > sed1.tmp
-sed  's/>/)/g;s/</(/g' sed1.tmp > "$mTmp"
+mAwrFile=`tail -1 awrauto.tmp`
+sed  's/\x0c/\x0a/g'  "$mAwrFile" > sed1.tmp
+sed  's/>/)/g;s/</(/g' sed1.tmp > "$mAwrFile"
 
 ECHO()
 {
@@ -84,35 +88,56 @@ ECHO_M()
     echo "$1" |awk '{printf "    %s\n",$0}' | tee -a 2-database.xml
 }
 
+# AIX not support grep -A option
+GREP_A()
+{
+case `uname` in
+AIX)
+    # only return first match
+    mTmp=`grep -n "$2" $3 | head -1 | awk -F: '{print $1}'`
+    mTmp=` expr $mTmp `
+    if [ "$mTmp" -gt 0 ]; then
+        mEnd=`expr $mTmp + $1 - 1 `
+        head -"$mEnd" "$mAwrFile" | tail -"$1" | awk '{printf "    %s\n",$0}' | tee -a 2-database.xml
+    fi
+;;
+*)
+    # maybe multi match
+    mTmp=`grep -A $1 "$2"  $3`
+    echo "$mTmp" |awk '{printf "    %s\n",$0}' | tee -a 2-database.xml
+;;
+esac
+}
+
 
 ECHO   ""
 ECHO   "  <AWR>"
 ECHO   "    <HC_AWR_HEAD>"
-ECHO_M      "`grep -A 4 \"^Begin Snap\" $mTmp`"
+GREP_A      4 "^Begin Snap" "$mAwrFile"
 ECHO   "    </HC_AWR_HEAD>"
 ECHO   ""
 ECHO   "    <HC_AWR_PROFILE>"
-ECHO_M      "`grep -A 22 \"^Load Profile\" $mTmp`"
+GREP_A      22 "^Load Profile" "$mAwrFile"
 ECHO   "    </HC_AWR_PROFILE>"
 
 ECHO   ""
 ECHO   "    <HC_AWR_TOPEVENTS>"
-ECHO_M      "`grep -A 15 \"^Top.*Events\" $mTmp`"
+GREP_A      15 "^Top.*Events" "$mAwrFile"
 ECHO   "    </HC_AWR_TOPEVENTS>"
 
 ECHO   ""
 ECHO   "    <HC_AWR_TBS_IO>"
-ECHO_M      "`grep -A 20 \"Tablespace IO Stats\" $mTmp`"
+GREP_A      20 "^Tablespace IO Stats" "$mAwrFile"
 ECHO   "    </HC_AWR_TBS_IO>"
 
 ECHO   ""
 ECHO   "    <HC_AWR_TABLESCAN>"
-ECHO_M      "`grep  \"^table \" $mTmp`"
+ECHO_M      "`grep  \"^table \" $mAwrFile`"
 ECHO   "    </HC_AWR_TABLESCAN>"
 
 ECHO   ""
 ECHO   "    <HC_AWR_TOP_GETS>"
-ECHO_M      "`grep -A 30 -i \"SQL ordered by Gets\" $mTmp`"
+GREP_A      30 "^SQL ordered by Gets" "$mAwrFile"
 ECHO   "    </HC_AWR_TOP_GETS>"
 
 ECHO   "  </AWR>"
