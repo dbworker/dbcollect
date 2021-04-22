@@ -9,8 +9,8 @@
 #  FOR SAFETY, ONLY RUN 'hccdump.sh' IN INSTALL DIRECTORY.
 #  ONLY USE `rm` WITH A SPECIFIED FILE.
 #**********************************************************
-mVersion="0.2"
-mRelease="20210415"
+mVersion="0.2.1"
+mRelease="20210422"
 
 # for safety, only run hccdump.sh in install directory
 if [ "$0" != "hccdump.sh"  ]; then
@@ -56,19 +56,21 @@ WLOG "[$0][info] script started."
 FormatOracleXml()
 {
     # column '   ' made heading ^'' and should be cleaned
-    sed -i "/^$/d;s/^''/  /g;s/^---/   /g" $1
+    sed  "/^$/d;s/^''/  /g;s/^---/   /g"       $1 > sed1.tmp
     # @@_@@ is segment flag, and pad space before '<HC'
-    sed -i "s/^@@_@@//g;s/^<HC/    <HC/g"  $1
-    sed -i 's/^<\/HC/    <\/HC/g'          $1
+    sed  "s/^@@_@@//g;s/^<HC/    <HC/g"  sed1.tmp > sed2.tmp
+    sed  's/^<\/HC/    <\/HC/g'          sed2.tmp > sed1.tmp
+    mv sed1.tmp  $1
 }
 
 # in config toml, maybe exist some evil char [ / \ space ; * ~ < > | $ `]
 # @param cfgFile
 FilterEvilChar()
 {
-    sed -i 's/\///g;s/\\//g;s/ //g;s/\;//g' $1
-    sed -i 's/\*//g;s/~//g; s/<//g;s/>//g' $1
-    sed -i 's/|//g;s/\$//g;s/`//g' $1
+    sed  's/\///g;s/\\//g;s/ //g;s/\;//g'      $1 > sed1.tmp
+    sed  's/\*//g;s/~//g; s/<//g;s/>//g' sed1.tmp > sed2.tmp
+    sed  's/|//g;s/\$//g;s/`//g'         sed2.tmp > sed1.tmp
+    mv sed1.tmp  $1
 }
 
 #######################################
@@ -86,6 +88,20 @@ AIX)
 ;;
 esac
 
+# handle sid and pdbs
+# save default ORACLE_SID
+mDefaultSID=$ORACLE_SID
+
+ps -ef|grep ora_smon_|grep -v grep |awk '{print $NF}'| awk -F_ '{print $NF}' > sidlist.tmp
+sqlplus -S "/ as sysdba" << EOF
+    set echo off feedback off trimspool on trimout on
+    set heading off
+    spool pdblist.tmp
+    col name for a20
+    select name from v$pdbs;
+    spool off
+EOF
+
 #######################################
 # foreach xxx.toml in config/:
 #     dump x database info
@@ -99,16 +115,33 @@ do
 
 mCfgFileName=`head -$mDbIndex cfg.out|tail -1`
 
+# is valid sid/pdb name?
+mIsPDB=0
+mSid=`grep -i ORACLE_SID $mCfgFileName|sed 's/ORACLE_SID//g;s/= "//g'`
+# to fully match, distinguish crm / crmdb
+mTmp=`awk -v sid="$mSid" '{if($0 == sid) print $0}' sidlist.tmp|wc -l`
+if [ "$mTmp" == "1" ]; then
+    export ORACLE_SID="$mSid"
+else
+    mTmp=`awk -v sid="$mSid" '{if($0 == sid) print $0}' pidlist.tmp|wc -l`
+    if [ "$mTmp" == "1" ]; then
+        mIsPDB=1
+    else
+        continue;
+    fi
+fi
+
+
 # get db alias string and filter special char
 grep db_alias "$mCfgFileName" > safe.tmp
-sed -i 's/db_alias//g;s/=//g;s/"//g' safe.tmp
-sed -i "s/'//g" safe.tmp
+sed 's/db_alias//g;s/=//g;s/"//g' safe.tmp > sed1.tmp
+sed "s/'//g" sed1.tmp > safe.tmp
 FilterEvilChar safe.tmp
 mDbAlias=`head -1 safe.tmp`
 mNameLen=`expr length "$mDbAlias"`
-if [ $mNameLen -gt 20 ]; then
+if [ $mNameLen -gt 50 ]; then
     echo ""
-    WLOG "[$0][error] db_alias too long in .toml, $0 exit."
+    WLOG "[$0][error] db_alias ($mDbAlias) too long in .toml, $0 exit."
     exit -1
 fi
 if [ $mNameLen -eq 0 ]; then
@@ -116,6 +149,13 @@ if [ $mNameLen -eq 0 ]; then
     WLOG "[$0][error] db_alias not exist or invalid in .toml, $0 exit."
     exit -1
 fi
+
+# test connectivity
+# 直连sid, 取数据
+# 否则尝试是否pdb
+
+# 如果
+sqlplus -L -S 
 
 WLOG "[$0][info] dumping $mDbAlias."
 
@@ -127,18 +167,25 @@ cp 1-host $mDbAlias/1-host.xml
 mDbType=`grep db_type "$mCfgFileName" | sed 's/db_type//g;s/=//g;s/"//g'|tr 'a-z' 'A-Z'`
 case "$mDbType" in
 ORACLE)
-    # set env
-    mSid=`grep -i ORACLE_SID $mCfgFileName|sed 's/ORACLE_SID//g;s/=//g;s/"//g'`
-    export ORACLE_SID="$mSid"
-
     # dump db/sec
-    sqlplus -S "/ as sysdba" << EOF
-    @../script/dump_db_oracle_inst.sql "$mVersion"
-    @../script/dump_db_oracle_sec.sql  "$mVersion"
+    if [ $mIsPDB -eq 0 ]; then
+        sqlplus -S "/ as sysdba" << EOF
+        @../script/dump_db_oracle_inst.sql "$mVersion"
+        @../script/dump_db_oracle_sec.sql  "$mVersion"
 
-    @../script/get_db_oracle_misc.sql
-    --exit
+        @../script/get_db_oracle_misc.sql
+        --exit
 EOF
+    else
+        sqlplus -S "/ as sysdba" << EOF
+        alter session set container=$mSid;
+        @../script/dump_db_oracle_inst.sql "$mVersion"
+        @../script/dump_db_oracle_sec.sql  "$mVersion"
+
+        @../script/get_db_oracle_misc.sql
+        --exit
+EOF
+
     # indent some space
     FormatOracleXml 2-database.xml
     FormatOracleXml 3-security.xml
@@ -167,6 +214,7 @@ EOF
     mv $mDbAlias.tar.gz ../
 
     #just leave *.tmp
+    export ORACLE_SID=$mDefaultSID
 ;;
 MYSQL)
     sh hccdump_db_mysql.sh

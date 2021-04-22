@@ -33,7 +33,8 @@ spool off
 --exit
 EOF
 
-sed -i '/^$/d;s/ //g' awr.tmp
+sed '/^$/d;s/ //g' awr.tmp > sed1.tmp
+mv sed1.tmp awr.tmp
 mMinSnapId=`head -1 awr.tmp`
 mMaxSnapId=`tail -1 awr.tmp`
 
@@ -62,16 +63,16 @@ CreateAWR "html" "html"
 CreateAWR "text" "txt"
 
 # append some awr info to database.xml, so delete some tag.
-sed -i "/<\/DATABASE>/d" 2-database.xml
-sed -i "/<\/DB_HEALTH_CHECK_DATA>/d" 2-database.xml
+sed  "/<\/DATABASE>/d" 2-database.xml > sed1.tmp
+sed  "/<\/DB_HEALTH_CHECK_DATA>/d" sed1.tmp > 2-database.xml
 
 
 # AWR report special char
 # replace '<' and '>', which will confuse XML Parser?
 # char '^L' (0x0C, formfeed, '\f'), not allowed by XML Parser
 mTmp=`tail -1 awrauto.tmp`
-sed -i 's/\x0c/\x0a/g'  "$mTmp"
-sed -i 's/>/)/g;s/</(/g' "$mTmp"
+sed  's/\x0c/\x0a/g'  "$mTmp" > sed1.tmp
+sed  's/>/)/g;s/</(/g' sed1.tmp > "$mTmp"
 
 ECHO()
 {

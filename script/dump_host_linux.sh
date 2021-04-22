@@ -81,5 +81,10 @@ ECHO   "  <STORAGE>"
 ECHO
 ECHO   "  </STORAGE>"
 
+ECHO
+ECHO   "  <HC_OPATCH_LS>"
+ECHO_M    "`$ORACLE_HOME/OPatch/opatch lsinventory`"
+ECHO   "  </HC_OPATCH_LS>"
+
 ECHO "</HOST>"
 ECHO "</DB_HEALTH_CHECK_DATA>"

@@ -16,7 +16,8 @@ WLOG()
     echo "[`date +'%Y-%m-%d %H:%M:%S'`]$1"| tee -a ../dump.log
 }
 
-sed -i '/^$/d;s/ //g' misc.out
+sed  '/^$/d;s/ //g' misc.out > sed1.tmp
+mv sed1.tmp  misc.out
 mAlertPath=`head  -1 misc.out |tail -1`
 mAlertName=`head  -2 misc.out |tail -1`
 
@@ -52,28 +53,24 @@ rm alert_0.tmp
 
 #####################################################
 # opatch info
-mOpatchInfo="4-runlog.xml"
+mSoftInfo="4-runlog.xml"
 
 # clear, and avoid UTF-BOM
-echo "" > $mOpatchInfo
+echo "" > $mSoftInfo
 
 ECHO()
 {
-    echo "$1" | tee -a $mOpatchInfo
+    echo "$1" | tee -a $mSoftInfo
 }
 
 ECHO_M()
 {
-    echo "$1" |awk '{printf "    %s\n",$0}' |tee -a $mOpatchInfo
+    echo "$1" |awk '{printf "    %s\n",$0}' |tee -a $mSoftInfo
 }
 
-echo   "<DB_HEALTH_CHECK_DATA versoin=\"$1\">" | tee -a $mOpatchInfo
-echo   "<DATABASE type=\"Oracle\">" | tee -a $mOpatchInfo
+echo   "<DB_HEALTH_CHECK_DATA versoin=\"$1\">" | tee -a $mSoftInfo
+echo   "<DATABASE type=\"Oracle\">" | tee -a $mSoftInfo
 
-ECHO   ""
-ECHO   "    <HC_OPATCH_LS>"
-ECHO_M      "`$ORACLE_HOME/OPatch/opatch lsinventory`"
-ECHO   "    </HC_OPATCH_LS>"
 
 mIsRAC=`head  -8 misc.out |tail -1`
 
