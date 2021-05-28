@@ -9,8 +9,8 @@
 #  FOR SAFETY, ONLY RUN 'hccdump.sh' IN INSTALL DIRECTORY.
 #  ONLY USE `rm` WITH A SPECIFIED FILE.
 #**********************************************************
-mVersion="0.2.2"
-mRelease="20210422"
+mVersion="0.3.0"
+mRelease="20210518"
 
 # for safety, only run hccdump.sh in install directory
 if [ "$0" != "hccdump.sh"  ]; then
@@ -38,12 +38,12 @@ export LANG=en_US.UTF-8
 # |    |----2-database.xml
 # |    |----...(.xml)
 # |    |----attachment/
-# |    |    |----alert.log
+# |    |    |----alert_sid.log
 # |    |    |----config.toml
 # |    |    |----awr_xxx.html
 # |----xxxdb2/
 # |    |----...
-mkdir -p data
+mkdir -p data tomb
 cd data
 
 WLOG()
@@ -58,11 +58,13 @@ WLOG "[$0][info] script started."
 # @param xmlFile
 FormatOracleXml()
 {
-    # column '   ' made heading ^'' and should be cleaned
-    sed  "/^$/d;s/^''/  /g;s/^---/   /g"       $1 > sed1.tmp
+    # pseudo column head 'X_X' and '---'' should be cleaned
+    sed  "/^$/d;s/^X_X/   /g;s/^---/   /g"       $1 > sed1.tmp
     # @@_@@ is segment flag, and pad space before '<HC'
     sed  "s/^@@_@@//g;s/^<HC/    <HC/g"  sed1.tmp > sed2.tmp
+    # lines create by 'prompt <x>' should pre-padding space
     sed  's/^<\/HC/    <\/HC/g'          sed2.tmp > sed1.tmp
+    
     mv sed1.tmp  $1
 }
 
@@ -106,10 +108,15 @@ sqlplus -S "/ as sysdba" << EOF
     select pdb_name from dba_pdbs;
     spool off
 EOF
+sed '/^$/d;s/ //g' pdblist.tmp > sed1.tmp
+mv sed1.tmp pdblist.tmp
 
 #######################################
 # foreach xxx.toml in config/:
-#     dump x database info
+#     if SID in local SIDs
+#         dump x database info
+# if many db use same SID, such as 'orcl':
+#     orcl will dump many times
 
 ls $mToolPath/config/*.toml > cfg.out
 mTmp=`cat cfg.out|wc -l`
@@ -174,7 +181,7 @@ ORACLE)
     # dump db/sec
     if [ $mIsPDB -eq 0 ]; then
         sqlplus -S "/ as sysdba" << EOF
-        @../script/dump_db_oracle_inst.sql "$mVersion"
+        @../script/dump_db_oracle_inst.sql "$mVersion" "NO" ""
         @../script/dump_db_oracle_sec.sql  "$mVersion"
 
         @../script/get_db_oracle_misc.sql
@@ -183,7 +190,7 @@ EOF
     else
         sqlplus -S "/ as sysdba" << EOF
         alter session set container=$mSid;
-        @../script/dump_db_oracle_inst.sql "$mVersion"
+        @../script/dump_db_oracle_inst.sql "$mVersion" "YES" $mSid
         @../script/dump_db_oracle_sec.sql  "$mVersion"
 
         @../script/get_db_oracle_misc.sql
@@ -247,7 +254,8 @@ fi
 # seek last start pos
 mPos=`grep -n " script started" dump.log|awk  -F: '{print $1}' | tail -1`
 mTmp=`cat dump.log|wc -l`
-mTmp=`expr "$mTmp" - "$mPos" + 1 `
+mTmp=`expr $mTmp - $mPos `
+mTmp=`expr $mTmp + 1 `
 echo ""
 echo "******** $0 running summary ********"
 tail -$mTmp dump.log

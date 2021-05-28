@@ -35,19 +35,59 @@ spool 5-backup.xml
 select '<DB_HEALTH_CHECK_DATA versoin="'|| :v_dumpver || '">' ||  chr(10)||
        '<DATABASE type="Oracle">'   ||  chr(10)||
        '  <BACKUP>' from dual;
-select '    <HC_BACKUP_IN24HOUR  v="' ||count(*)||'"/>' from v\$rman_status
+select /*+ rule */ '    <HC_BACKUP_IN24HOUR  v="' ||count(*)||'"/>' from v\$rman_status
     where start_time > sysdate-1
     and operation='BACKUP';
+select /*+ rule */ '    <HC_BACKUP_DB_WEEKLY_MIN  v="' ||round(min(output_bytes)/1024/1024/1024)||' GB"/>' from v\$rman_status
+    where start_time > sysdate-10
+    and operation='BACKUP' and object_type like 'DB%';
+select /*+ rule */ '    <HC_BACKUP_DB_WEEKLY_MAX  v="' ||round(max(output_bytes)/1024/1024/1024)||' GB"/>' from v\$rman_status
+    where start_time > sysdate-10
+    and operation='BACKUP' and object_type like 'DB%';
+select /*+ rule */ '    <HC_BACKUP_ARCH_DAILY_MIN  v="' ||round(min(sum(output_bytes))/1024/1024)||' MB"/>' from v\$rman_status
+    where start_time > sysdate-5
+    and operation='BACKUP' and object_type like 'ARCHIVELOG%'
+    group by trunc(start_time,'dd');
+select /*+ rule */ '    <HC_BACKUP_ARCH_DAILY_MAX  v="' ||round(max(sum(output_bytes))/1024/1024)||' MB"/>' from v\$rman_status
+    where start_time > sysdate-5
+    and operation='BACKUP' and object_type like 'ARCHIVELOG%'
+    group by trunc(start_time,'dd');
+
 
 set heading on
-prompt <HC_BACKUP_STAT>
+col X_X for a3
 col operation for a8
 col status for a20
-select '   ',operation, object_type, start_time, end_time, input_bytes, 
-    output_bytes, status from v\$rman_status
+col dura for 999999
+col input_bytes for 999,999,999,999,999
+col output_bytes for 999,999,999,999,999
+prompt <HC_BACKUP_DB>
+select * from (select /*+ rule */ '   ' X_X, object_type, start_time, round((end_time-start_time) *86400) dura, input_bytes, 
+    output_bytes, substr(status,1,18) status, output_device_type  from v\$rman_status
     where start_time > sysdate-10
-    and operation='BACKUP' order by start_time desc;
-prompt </HC_BACKUP_STAT>
+    and operation='BACKUP' and object_type like 'DB%' order by start_time desc
+) where rownum <=10
+order by output_device_type, start_time;
+prompt </HC_BACKUP_DB>
+
+prompt <HC_BACKUP_ARCH>
+select * from (select /*+ rule */ '   ' X_X, object_type, start_time, round((end_time-start_time) *86400) dura, input_bytes, 
+    output_bytes, substr(status,1,18) status, output_device_type from v\$rman_status
+    where start_time > sysdate-10
+    and operation='BACKUP' and object_type like 'ARCHIVELOG%' order by start_time desc
+) where rownum <=10
+order by output_device_type, start_time;
+prompt </HC_BACKUP_ARCH>
+
+prompt <HC_BACKUP_FAILED>
+select * from (select /*+ rule */ '   ' X_X, object_type, start_time, end_time, input_bytes, 
+    output_bytes, substr(status,1,18) status from v\$rman_status
+    where start_time > sysdate-10
+    and operation='BACKUP' and status='FAILED' order by start_time desc
+) where rownum <=5;
+prompt </HC_BACKUP_FAILED>
+
+
 
 set heading off
 select '  </BACKUP>'   ||  chr(10)||

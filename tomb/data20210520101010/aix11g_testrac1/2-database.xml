@@ -1,0 +1,605 @@
+<DB_HEALTH_CHECK_DATA versoin="0.3.0">
+<DATABASE type="Oracle">
+  <INSTANCE>
+    <HC_DB_NAME          v="TESTDB"/>
+    <HC_DB_ID            v="8810916561"/>
+    <HC_ISPDB            v="NO"/>
+    <HC_PDB_NAME         v=""/>
+    <HC_DB_VERSION       v="11.2.0.4.0"/>
+    <HC_INSTANCE_NAME    v="TESTDB1"/>
+    <HC_IS_RAC           v="YES"/>
+    <HC_INSTANCE_COUNT   v="2"/>
+    <HC_DB_CHARSET       v="AL32UTF8"/>
+    <HC_LOG_MODE         v="ARCHIVELOG"/>
+    <HC_SGA_SIZE         v="13061 MB"/>
+    <HC_DB_BLOCK_SIZE    v="8192"/>
+    <HC_TABLESPACE_COUNT v="37"/>
+    <HC_DB_USED_SPACE    v="658422 MB"/>
+    <HC_DATAFILE_COUNT   v="46"/>
+    <HC_TEMPFILE_COUNT   v="9"/>
+    <HC_CONTROL_NUM      v="2"/>
+    <HC_REDO_MINSIZE     v="512 MB"/>
+    <HC_REDO_GROUPS      v="12"/>
+    <HC_REDO_MEMBERS     v="2"/>
+    <HC_PARAM_PROCESSES  v="4000"/>
+    <HC_MAX_CONNECTIONS  v="1424"/>
+    <HC_AWR_HOLD_DAYS    v="8"/>
+    <HC_DB_PARAMETERS>
+    NAME                                          VALUE
+    --------------------------------------------- --------------------------------------------------
+    aq_tm_processes                               1
+    audit_file_dest                               /oracle/product/ora11.2/admin/TESTDB/adump
+    audit_trail                                   DB
+    cluster_database                              TRUE
+    compatible                                    11.2.0.4.0
+    control_file_record_keep_time                 40
+    control_files                                 +DATA/TESTDB/controlfile/current.256.881507285, +AR
+    cursor_sharing                                SIMILAR
+    db_block_size                                 8192
+    db_create_file_dest                           +DATA
+    db_domain
+    db_name                                       TESTDB
+    db_recovery_file_dest                         +ARCH
+    db_recovery_file_dest_size                    10737418240
+    deferred_segment_creation                     FALSE
+    diagnostic_dest                               /oracle/product/ora11.2
+    dispatchers                                   (PROTOCOL=TCP) (SERVICE=TESTDBXDB)
+    dml_locks                                     9700
+    instance_number                               1
+    log_archive_dest_1                            LOCATION=+ARCH
+    log_archive_format                            %t_%s_%r.dbf
+    memory_target                                 13757317120
+    nls_date_format                               yyyy-mm-dd hh24:mi:ss
+    nls_date_language                             AMERICAN
+    nls_language                                  SIMPLIFIED CHINESE
+    nls_length_semantics                          CHAR
+    nls_territory                                 CHINA
+    open_cursors                                  300
+    parallel_max_servers                          0
+    parallel_min_servers                          0
+    pre_page_sga                                  TRUE
+    processes                                     4000
+    query_rewrite_enabled                         TRUE
+    query_rewrite_integrity                       TRUSTED
+    remote_dependencies_mode                      SIGNATURE
+    remote_listener                               TESTDB-scan:1521
+    remote_login_passwordfile                     EXCLUSIVE
+    result_cache_max_size                         0
+    sessions                                      6048
+    spfile                                        +DATA/TESTDB/parameterfile/spfile.303.1068350813
+    thread                                        1
+    timed_statistics                              TRUE
+    transactions                                  2425
+    undo_retention                                1800
+    undo_tablespace                               UNDOTBS1
+    utl_file_dir                                  *
+    </HC_DB_PARAMETERS>
+    <HC_DB_SPEC_PARAMS>
+    NAME                                          VALUE                          ISDEFAULT
+    --------------------------------------------- ------------------------------ ---------------
+    _gc_policy_time                               10                             TRUE
+    _gc_undo_affinity                             TRUE                           TRUE
+    _optimizer_adaptive_cursor_sharing            TRUE                           TRUE
+    _optimizer_extended_cursor_sharing            UDO                            TRUE
+    _optimizer_extended_cursor_sharing_rel        SIMPLE                         TRUE
+    _optimizer_mjc_enabled                        TRUE                           TRUE
+    _undo_autotune                                TRUE                           TRUE
+    _use_adaptive_log_file_sync                   TRUE                           TRUE
+    cell_offload_processing                       TRUE                           TRUE
+    db_recovery_file_dest                         +ARCH                          FALSE
+    db_recovery_file_dest_size                    10737418240                    FALSE
+    local_listener                                 (ADDRESS=(PROTOCOL=TCP)(HOST= TRUE
+                                                  172.16.10.16)(PORT=1
+    log_archive_config                                                           TRUE
+    log_archive_dest_2                                                           TRUE
+    memory_max_target                             13757317120                    TRUE
+    open_cursors                                  300                            FALSE
+    parallel_force_local                          FALSE                          TRUE
+    parallel_max_servers                          0                              FALSE
+    recyclebin                                    on                             TRUE
+    remote_login_passwordfile                     EXCLUSIVE                      FALSE
+    result_cache_max_size                         0                              FALSE
+    sec_case_sensitive_logon                      TRUE                           TRUE
+    sga_max_size                                  13757317120                    TRUE
+    sga_target                                    0                              TRUE
+    undo_retention                                1800                           FALSE
+    </HC_DB_SPEC_PARAMS>
+  </INSTANCE>
+
+  <DB_FILES>
+    <HC_TABLESPACE_UMAX  v="58.2"/>
+    <HC_TABLESPACE_USAGE>
+    TABLESPACE_NAME    SIZE_GB PERCEN
+    ------------------ ------- ------
+    TRAN_DATA               92 58.2%
+    APP_EOD_DATA            20 54.6%
+    ECI_TRAN_INX            20 44.7%
+    USERS                    2 40.1%
+    TESTDB                 106 36.4%
+    APPER                  242 34.9%
+    SSO_DATA                 5 15.4%
+    </HC_TABLESPACE_USAGE>
+    <HC_CONTROL_FILES>
+    NAME                                                         FILE_SIZE
+    ------------------------------------------------------------ ----------
+    +DATA/TESTDB/controlfile/current.256.881507285                105M
+    +ARCH/TESTDB/controlfile/current.256.881507285                105M
+    </HC_CONTROL_FILES>
+    <HC_REDO_FILES>
+    GROUP# TYPE    MEMBER
+    ------ ------- --------------------------------------------------
+         1 ONLINE  +DATA/TESTDB/onlinelog/group_1.259.971915455
+         1 ONLINE  +ARCH/TESTDB/onlinelog/group_1.259.971915457
+         2 ONLINE  +DATA/TESTDB/onlinelog/group_2.258.971915461
+         2 ONLINE  +ARCH/TESTDB/onlinelog/group_2.419.971915463
+         3 ONLINE  +DATA/TESTDB/onlinelog/group_3.257.971915465
+         3 ONLINE  +ARCH/TESTDB/onlinelog/group_3.289.971915469
+         4 ONLINE  +DATA/TESTDB/onlinelog/group_4.266.894848849
+         4 ONLINE  +ARCH/TESTDB/onlinelog/group_4.260.894848851
+         5 ONLINE  +DATA/TESTDB/onlinelog/group_5.267.894848853
+         5 ONLINE  +ARCH/TESTDB/onlinelog/group_5.261.894848855
+         6 ONLINE  +DATA/TESTDB/onlinelog/group_6.268.894848857
+         6 ONLINE  +ARCH/TESTDB/onlinelog/group_6.262.894848857
+         7 ONLINE  +DATA/TESTDB/onlinelog/group_7.299.965956313
+         7 ONLINE  +ARCH/TESTDB/onlinelog/group_7.297.965956315
+         8 ONLINE  +DATA/TESTDB/onlinelog/group_8.300.965956319
+         8 ONLINE  +ARCH/TESTDB/onlinelog/group_8.295.965956321
+         9 ONLINE  +DATA/TESTDB/onlinelog/group_9.301.965956325
+         9 ONLINE  +ARCH/TESTDB/onlinelog/group_9.344.965956329
+        10 ONLINE  +DATA/TESTDB/onlinelog/group_10.305.1070645445
+        10 ONLINE  +ARCH/TESTDB/onlinelog/group_10.584.1070645445
+        11 ONLINE  +DATA/TESTDB/onlinelog/group_11.306.1070645447
+        11 ONLINE  +ARCH/TESTDB/onlinelog/group_11.438.1070645447
+        12 ONLINE  +DATA/TESTDB/onlinelog/group_12.307.1070645449
+        12 ONLINE  +ARCH/TESTDB/onlinelog/group_12.604.1070645449
+    </HC_REDO_FILES>
+    <HC_REDO_ROTATE>
+       THREAD# GROUP#      BYTES SEQUENCE# STATUS           FIRST_TIME
+    ---------- ------ ---------- --------- ---------------- -------------------
+             1      3  536870912     68590 INACTIVE         2021-05-27 14:21:16
+             1      1  536870912     68591 ACTIVE           2021-05-27 14:36:16
+             1      2  536870912     68592 CURRENT          2021-05-27 14:51:16
+             2      5  536870912     67916 INACTIVE         2021-05-27 14:21:43
+             2      6  536870912     67917 ACTIVE           2021-05-27 14:36:43
+             2      4  536870912     67918 CURRENT          2021-05-27 14:51:43
+             3      9  536870912         9 INACTIVE         2020-11-27 22:33:25
+             3      7  536870912        10 INACTIVE         2020-11-27 22:35:48
+             3      8  536870912        11 INACTIVE         2020-11-28 01:36:41
+             4     12  536870912         6 INACTIVE         2021-05-08 11:06:55
+             4     10  536870912         7 INACTIVE         2021-05-08 11:17:44
+             4     11  536870912         8 INACTIVE         2021-05-08 11:32:45
+    </HC_REDO_ROTATE>
+    <HC_REDO_SWITCH_COUNT>
+    THREAD# FIRST_TIME             COUNT(*)
+    ------- -------------------- ----------
+          1 2021-05-20                   99
+          1 2021-05-21                  102
+          1 2021-05-22                  100
+          1 2021-05-23                  101
+          1 2021-05-24                  100
+          1 2021-05-25                  100
+          1 2021-05-26                  100
+          2 2021-05-20                   98
+          2 2021-05-21                  100
+          2 2021-05-22                  100
+          2 2021-05-23                  100
+          2 2021-05-24                  100
+          2 2021-05-25                   99
+          2 2021-05-26                  100
+    </HC_REDO_SWITCH_COUNT>
+    <HC_DATA_FILES>
+    FILE_NAME                                          SIZE_MB TABLESPACE_NAME AUT
+    -------------------------------------------------- ------- --------------- ---
+    +DATA/TESTDB/datafile/undotbs1.262.971915365          22635 UNDOTBS1        YES
+    +DATA/TESTDB/datafile/system.260.881507293             2000 SYSTEM          YES
+    +DATA/TESTDB/datafile/sysaux.261.881507299             5120 SYSAUX          YES
+    +DATA/TESTDB/datafile/undotbs2.264.881507361          20210 UNDOTBS2        YES
+    +DATA/TESTDB/datafile/users.265.881507403              2000 USERS           NO
+    +DATA/TESTDB/datafile/APPER01.dbf                    32768 APPER          NO
+    +DATA/TESTDB/datafile/APPER02.dbf                    32768 APPER          NO
+    +DATA/TESTDB/datafile/sso_data01.dbf                   5120 SSO_DATA        NO
+    +DATA/TESTDB/datafile/TESTDB01.dbf                     32768 TESTDB           NO
+    +DATA/TESTDB/datafile/esb01.dbf                         512 ESB             YES
+    +DATA/TESTDB/datafile/esb02.dbf                         512 ESB             YES
+    +DATA/TESTDB/datafile/bhbatchdata01.dbf                5120 BH_BATCH_DATA   NO
+    +DATA/TESTDB/datafile/bh_01.dbf                        3736 BH_DATA         YES
+    +DATA/TESTDB/datafile/bh_indx_01.dbf                   5120 BH_INDEX_DATA   NO
+    +DATA/TESTDB/datafile/bh_seq_01.dbf                   15360 BH_SEQ_DATA     NO
+    </HC_DATA_FILES>
+    <HC_RECYCLEBIN_USED  v="1625 MB"/>
+  </DB_FILES>
+
+  <DB_OBJECTS>
+    <HC_OBJECT_ID_MAX    v="595433"/>
+    <HC_TABLE_COUNT      v="1719"/>
+    <HC_DBLINK_COUNT     v="11"/>
+    <HC_TRIGGER_COUNT    v="27"/>
+    <HC_INVALID_OBJECTS  v="2"/>
+    <HC_TABLE_USE_LONG   v="6"/>
+    <HC_TABLE_NAME_LOWERCASE>
+    </HC_TABLE_NAME_LOWERCASE>
+    <HC_BIG_TABLES>
+    NAME                                     SIZE_GB   SEGMENT_TYPE
+    ---------------------------------------- --------- ---------------
+    TESTDB.PICS_JOURNAL                          10 GB  TABLE
+    QUERY.CM_TRAN_SEQ_MONTH_BAK                  7 GB  TABLE
+    </HC_BIG_TABLES>
+    <HC_PTABLE_PARTS_MAX v="21"/>
+    <HC_PTABLE_PARTS_TOPCNT>
+    OWNER                TABLE_NAME                     PARTITION PARTITION_COUNT
+    -------------------- ------------------------------ --------- ---------------
+    APPER               PLFTXLOG                       RANGE                  21
+    ECIS                 CM_TRAN_SEQ_HIST               RANGE                  21
+    APPER               BIN$rMvkwXsoAJrgU6wQCg51ew==$0 RANGE                   1
+    APPER               BIN$rMvkwXspAJrgU6wQCg51ew==$0 RANGE                   1
+    </HC_PTABLE_PARTS_TOPCNT>
+    <HC_INDEX_COLS_MAX   v="8"/>
+    <HC_TABLE_IDXS_MAX   v="8"/>
+    <HC_INDEX_OVERMUCH>
+    TABLE_OWNER          TABLE_NAME                            CNT
+    -------------------- ------------------------------ ----------
+    INTEGRATOR           CUPS_TRANS_JOURNAL_B                    8
+    INTEGRATOR           CUPS_TRANS_JOURNAL_A                    8
+    </HC_INDEX_OVERMUCH>
+    <HC_DB_NOCACHE_BIG_SEQ v="8"/>
+    <HC_DB_NOCACHE_SEQS>
+    SEQUENCE_OWNER       SEQUENCE_NAME                  LAST_NUMBER CACHE_SIZE
+    -------------------- ------------------------------ ----------- ----------
+    INTEGRATOR           CJ_WATER_SEQ                     700000000          0
+    ZFB                  THP_SEQ_NO_S                       7866085          0
+    INTEGRATOR           REGISTER_NO                        1000001          0
+    WPM                  THP_SEQ_NO_S                        531272          0
+    INTEGRATOR           GET_SEQUENCE_NO                     483449          0
+    </HC_DB_NOCACHE_SEQS>
+    <HC_SQL_NOT_BIND>
+    SQL_ID               SQL_TEXT                                           SCHEMA_NAM RANKING   COUNTS
+    -------------------- -------------------------------------------------- ---------- ------- --------
+    82syf3rtrc1z2        UPDATE CM_TRAN_SEQ          SET HOST_TRAN_SEQ =:1  ECIS            20       67
+    707zawvbyc11m        SELECT tran_type, tran_desc FROM rb_tran_def WHERE APPER          31       53
+    5g3k4v71zh04h        SELECT   gat.acct_type as acct_type, gat.acct_type APPER          34       50
+    0w1z006apw1vk        SELECT COUNT(*) AS NUM FROM CM_SYSTEM WHERE TO_CHA BRANCH          35       49
+    gty1yv5mm81mb        SELECT /*+ FULL(P) +*/ * FROM "SSO_LOGIN_LOG" P    SSO             36       48
+    12pwr658580az        SELECT   gat.acct_type, gat.acct_type_desc         APPER          36       48
+    288y3yvyqh1wf           SELECT   b.orgid,        b.APPERname,        b APPER          37       47
+    ghpjhhkwk00s7        SELECT cash_tran, SERV_CHARGE FROM rb_tran_def WHE APPER          43       41
+    9yyg5f9m4w0pb           SELECT DISTINCT APPERid, APPERname       FROM APPER          44       40
+    </HC_SQL_NOT_BIND>
+    <HC_SQL_VC_MAX       v="190"/>
+    <HC_SQL_VC_INFO>
+        VC SQL_ID         SQL_TEXT
+    ------ -------------- ------------------------------------------------------------
+       190 432m67zh2h3cf  select rowid as "__Oracle_JDBC_interal_ROWID__", MIN_SEQ, MA
+       189 dhktu82fbfy88  update (select rowid as "__Oracle_JDBC_interal_ROWID__", MIN
+       188 f1muqahatnbcr  select rowid as "__Oracle_JDBC_interal_ROWID__", MIN_SEQ, MA
+       172 7ng34ruy5awxq  select i.obj#,i.ts#,i.file#,i.block#,i.intcols,i.type#,i.fla
+       154 3c1kubcdjnppq  update sys.col_usage$ set   equality_preds    = equality_pre
+       152 4w5af3f6uspn9  select     to_char(RUN_DATE,:"SYS_B_0") as RUN_DATE,    to_c
+       150 5rygsj4dbw6jt  insert into sys.mon_mods$ (obj#, inserts, updates, deletes,
+       148 g00cj285jmgsw  update sys.mon_mods$ set inserts = inserts + :ins, updates =
+       140 69k5bhm12sz98  SELECT dbin.instance_number,        dbin.db_name, dbin.insta
+       137 2j0fw19fph49j  SELECT dbin.instance_number,        dbin.db_name, dbin.insta
+    </HC_SQL_VC_INFO>
+    <HC_SGA_INFO>
+    NAME                                          BYTES RES
+    ---------------------------------------- ---------- ---
+    Fixed SGA Size                              2259392 No
+    Redo Buffers                               36974592 No
+    Buffer Cache Size                        5603590144 Yes
+    Shared Pool Size                         3154116608 Yes
+    Large Pool Size                            67108864 Yes
+    Java Pool Size                             33554432 Yes
+    Streams Pool Size                                 0 Yes
+    Shared IO Pool Size                               0 Yes
+    Granule Size                               33554432 No
+    Maximum SGA Size                         1.3696E+10 No
+    Startup overhead in Shared Pool          1185565688 No
+    Free SGA Memory Available                4798283776
+    </HC_SGA_INFO>
+  </DB_OBJECTS>
+
+  <DB_PERFORMANCE>
+    <HC_MAX_PARALLELS    v="2"/>
+    <HC_DB_CPU_IO_HOURLY>
+    SNAPTIME               ELAPSE       CPU%     RD_CNT      RD_MS     WR_CNT      WR_MS
+    ------------------ ---------- ---------- ---------- ---------- ---------- ----------
+    20210519 00:59                       100
+    20210519 01:59             30         21        125          1        207          2
+    20210519 02:59             14         16         42          1        137          2
+    20210519 03:59             15         17         56          1        106          2
+    20210519 05:00              8         22         66          1         40          2
+    20210519 06:00              7         26         84          1        125          2
+    20210519 07:00            112         25      24499          1        995          2
+    20210519 07:59            123         27       1105          1       2922          2
+    20210519 08:59            132         28        557          1       4308          2
+    20210519 09:59             91         24       1702          1       8253          2
+    20210519 11:00           2311          5        866          1       9518          2
+    20210519 12:00            100         24       1196          1       9512          2
+    20210519 13:00            109         25        808          1       8873          2
+    20210519 14:00             76         25        788          1       6859          2
+    20210519 14:59            502         30      21714          1      10536          2
+    20210519 15:59            234         24       6142          1      12013          2
+    20210519 16:59            241         25        715          1      11420          2
+    20210519 18:00            320         27        879          1       9554          2
+    20210519 19:00            209         29         95          1       4449          2
+    20210519 20:00             24         18         65          1       2848          2
+    20210519 21:00            414         30        132          1       2521          2
+    20210519 22:00             36         20         59          1       1282          2
+    20210519 22:59             20         22         45          1       1197          2
+    20210519 23:59             23         27        192          1        561          2
+    </HC_DB_CPU_IO_HOURLY>
+    <HC_DB_RW_TX_HOURLY>
+    SNAPTIME              DBREADS  DBCHANGES     LOGONS    COMMITS  ROLLBACKS
+    ------------------ ---------- ---------- ---------- ---------- ----------
+    20210519 00:59
+    20210519 01:59            499          2         .1         .1          0
+    20210519 02:59            502          2         .1          0          0
+    20210519 03:59            481          2         .1          0          0
+    20210519 05:00            210          1         .1          0          0
+    20210519 06:00            162          2         .1          0          0
+    20210519 07:00           2997        178         .1         .3          0
+    20210519 07:59           3738        219         .1         .8          0
+    20210519 08:59           3771        224         .1        1.2          0
+    20210519 09:59           1957         19         .1        2.2          0
+    20210519 11:00           1274         20         .1        2.5          0
+    20210519 12:00           1807         23         .1        2.6          0
+    20210519 13:00           2720         18         .1        2.4          0
+    20210519 14:00           1916         14         .1        1.9          0
+    20210519 14:59           4205         25         .1        2.9          0
+    20210519 15:59          11786         27         .1        3.3          0
+    20210519 16:59           6297         30         .1        3.1          0
+    20210519 18:00          17409        134         .1        2.6          0
+    20210519 19:00          16913          8         .1        1.2          0
+    20210519 20:00            849          5         .1         .8          0
+    20210519 21:00          33611          5         .1         .7          0
+    20210519 22:00           1248          3         .1         .4          0
+    20210519 22:59            543          3         .1         .3          0
+    20210519 23:59            895          3         .1         .1          0
+    </HC_DB_RW_TX_HOURLY>
+  </DB_PERFORMANCE>
+
+  <DB_CLUSTER>
+    <HC_RAC_BLOCKS_LOST  v="0"/>
+    <HC_RAC_BLOCKLOST_DAILY>
+    SNAPTIME                 LOST
+    ------------------ ----------
+    2021-05-19                  0
+    2021-05-20                  0
+    2021-05-21                  0
+    2021-05-22                  0
+    2021-05-23                  0
+    2021-05-24                  0
+    2021-05-25                  0
+    2021-05-26                  0
+    </HC_RAC_BLOCKLOST_DAILY>
+    <HC_RAC_TRAFFIC_MB_HOURLY>
+    SNAPTIME            RAC_SIZEM
+    ------------------ ----------
+    20210519 00:59
+    20210519 01:59              0
+    20210519 02:59              0
+    20210519 03:59              0
+    20210519 05:00              0
+    20210519 06:00              0
+    20210519 07:00              1
+    20210519 07:59              0
+    20210519 08:59              0
+    20210519 09:59              0
+    20210519 11:00              0
+    20210519 12:00              0
+    20210519 13:00              0
+    20210519 14:00              0
+    20210519 14:59              0
+    20210519 15:59              0
+    20210519 16:59              0
+    20210519 18:00              0
+    20210519 19:00              0
+    20210519 20:00              0
+    20210519 21:00              0
+    20210519 22:00              0
+    20210519 22:59              0
+    20210519 23:59              0
+    </HC_RAC_TRAFFIC_MB_HOURLY>
+    <HC_RAC_STATS_HOURLY>
+    SNAPTIME              CR_RECV CR_RECV_MS   CUR_RECV CUR_RECV_MS
+    ------------------ ---------- ---------- ---------- -----------
+    20210519 00:59
+    20210519 01:59              2          0          2           0
+    20210519 02:59              2          0          2           0
+    20210519 03:59              2          0          2           0
+    20210519 05:00              2          0          2           0
+    20210519 06:00              2          0          2           0
+    20210519 07:00              8         .4         33          .5
+    20210519 07:59              3         .2         37          .5
+    20210519 08:59              2         .1          3          .2
+    20210519 09:59              3         .1          3          .1
+    20210519 11:00              2         .1          3          .1
+    20210519 12:00              3         .1          5          .1
+    20210519 13:00              2         .1          2          .1
+    20210519 14:00              2         .1          2          .1
+    20210519 14:59              2         .1          4          .1
+    20210519 15:59              3         .1          9          .4
+    20210519 16:59              3         .1          3          .1
+    20210519 18:00              2         .1          2          .1
+    20210519 19:00              2          0          2           0
+    20210519 20:00              2          0          2           0
+    20210519 21:00              2         .1          2          .1
+    20210519 22:00              2          0          2           0
+    20210519 22:59              2          0          2           0
+    20210519 23:59              2          0          2          .1
+    </HC_RAC_STATS_HOURLY>
+    <HC_RAC_MSG_HOURLY>
+    SNAPTIME                  MSG     MSG_MS
+    ------------------ ---------- ----------
+    20210519 00:59
+    20210519 01:59              4        1.1
+    20210519 02:59              4          1
+    20210519 03:59             19        1.7
+    20210519 05:00              6         .9
+    20210519 06:00              4          1
+    20210519 07:00             25        1.3
+    20210519 07:59             19        1.8
+    20210519 08:59             26        1.5
+    20210519 09:59             39        1.5
+    20210519 11:00             28          2
+    20210519 12:00             37        1.7
+    20210519 13:00             14          3
+    20210519 14:00             12        2.8
+    20210519 14:59             43        1.7
+    20210519 15:59             51        1.6
+    20210519 16:59             39        1.8
+    20210519 18:00             22        2.4
+    20210519 19:00              6        3.5
+    20210519 20:00              6        2.6
+    20210519 21:00              7        2.4
+    20210519 22:00              5        1.7
+    20210519 22:59              4        1.9
+    20210519 23:59              4        1.3
+    </HC_RAC_MSG_HOURLY>
+    <HC_ASM_DG_UMAX      v="95"/>
+    <HC_ASM_DG_USAGE>
+NAME                                     TYPE     TOTAL_MB    FREE_MB      USAGE
+   ------------------------------------- ------ ---------- ---------- ----------
+DATA                                     EXTERN     512000      27115         95
+DATA2                                    EXTERN     307200      22525         93
+ARCH                                     EXTERN     102400      94267          8
+OCR                                      HIGH        25600      24218          5
+    </HC_ASM_DG_USAGE>
+    <HC_ASM_DISK>
+DISK                 PATH                                       TOTAL_MB    FREE_MB GROUP_NAME
+   ----------------- ---------------------------------------- ---------- ---------- ---------------
+ARCH_0000            /dev/rhdisk16                                102400      94267 ARCH
+DATA_0000            /dev/rhdisk8                                 102400       5423 DATA
+DATA_0001            /dev/rhdisk9                                 102400       5421 DATA
+DATA_0002            /dev/rhdisk10                                102400       5423 DATA
+DATA_0003            /dev/rhdisk11                                102400       5424 DATA
+DATA_0004            /dev/rhdisk12                                102400       5424 DATA
+DATA2_0000           /dev/rhdisk13                                102400       7507 DATA2
+DATA2_0001           /dev/rhdisk14                                102400       7511 DATA2
+DATA2_0002           /dev/rhdisk15                                102400       7507 DATA2
+OCR_0000             /dev/rhdisk2                                   5120       4844 OCR
+OCR_0001             /dev/rhdisk3                                   5120       4846 OCR
+OCR_0002             /dev/rhdisk4                                   5120       4840 OCR
+OCR_0003             /dev/rhdisk5                                   5120       4844 OCR
+OCR_0004             /dev/rhdisk6                                   5120       4844 OCR
+    </HC_ASM_DISK>
+  </DB_CLUSTER>
+
+  <AWR>
+    <HC_AWR_HEAD>
+    Begin Snap:     51685 20-May-21 09:59:38       974       4.1         2
+      End Snap:     51687 20-May-21 12:00:18     1,029       4.1         2
+       Elapsed:              120.67 (mins)
+       DB Time:               40.18 (mins)
+    </HC_AWR_HEAD>
+
+    <HC_AWR_PROFILE>
+    Load Profile                    Per Second   Per Transaction  Per Exec  Per Call
+    ~~~~~~~~~~~~~~~            ---------------   --------------- --------- ---------
+                 DB Time(s):               0.3               0.1      0.01      0.00
+                  DB CPU(s):               0.0               0.0      0.00      0.00
+          Redo size (bytes):           4,659.9           1,839.6
+      Logical read (blocks):           1,553.2             613.1
+              Block changes:              21.1               8.3
+     Physical read (blocks):             783.6             309.4
+    Physical write (blocks):               1.5               0.6
+           Read IO requests:              12.9               5.1
+          Write IO requests:               0.9               0.4
+               Read IO (MB):               6.1               2.4
+              Write IO (MB):               0.0               0.0
+     RAC GC blocks received:               3.1               1.2
+       RAC GC blocks served:               2.3               0.9
+                 User calls:              77.4              30.6
+               Parses (SQL):              11.9               4.7
+          Hard parses (SQL):               0.1               0.0
+         SQL Work Area (MB):               0.2               0.1
+                     Logons:               0.1               0.0
+             Executes (SQL):              37.6              14.8
+                  Rollbacks:               0.0               0.0
+    </HC_AWR_PROFILE>
+
+    <HC_AWR_TOPEVENTS>
+    Top 10 Foreground Events by Total Wait Time
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                Tota    Wait   % DB
+    Event                                 Waits Time Avg(ms)   time Wait Class
+    ------------------------------ ------------ ---- ------- ------ ----------
+    enq: TX - row lock contention            32 1944   60769   80.7 Applicatio
+    DB CPU                                       136            5.6
+    log file sync                        19,024 22.1       1     .9 Commit
+    direct path read                     23,841   12       1     .5 User I/O
+    SQL*Net message from dblink          45,756  9.5       0     .4 Network
+    DFS lock handle                      48,426  5.8       0     .2 Other
+    gc current block 2-way               14,031  2.4       0     .1 Cluster
+    gc cr block 2-way                     5,678  1.2       0     .1 Cluster
+    reliable message                        847   .6       1     .0 Other
+    db file sequential read               1,759   .6       0     .0 User I/O
+    </HC_AWR_TOPEVENTS>
+
+    <HC_AWR_TBS_IO>
+    Tablespace IO Stats                 DB/Inst: TESTDB/TESTDB1  Snaps: 51685-51687
+    -> ordered by IOs (Reads + Writes) desc
+    
+    Tablespace
+    ------------------------------
+              Av       Av     Av      1-bk  Av 1-bk          Writes   Buffer  Av Buf
+      Reads   Rds/s  Rd(ms) Blks/Rd   Rds/s  Rd(ms)  Writes   avg/s    Waits  Wt(ms)
+    ------- ------- ------- ------- ------- ------- ------- ------- -------- -------
+    TESTDB
+     45,592       6     0.0    62.7     438     0.1       0       0        0     0.0
+    ECI_DEF_DATA
+     42,337       6     0.0    61.3      57     0.0       0       0        0     0.0
+    APPER
+      1,787       0     0.1    34.3   3,231     0.1       0       0        2     0.0
+    BH_DATA
+      2,628       0     0.0    58.4     345     0.0       0       0        0     0.0
+    SYSAUX
+        235       0     0.4     1.0     984     0.0       0       0        0     0.0
+    UNDOTBS1
+          5       0     0.0     1.0     551     0.0       0       0        0     0.0
+    </HC_AWR_TBS_IO>
+
+    <HC_AWR_TABLESCAN>
+    table fetch by rowid                        651,149           89.9          35.5
+    table fetch continued row                     9,438            1.3           0.5
+    table scan blocks gotten                 10,378,998        1,433.6         565.9
+    table scan rows gotten                  404,290,158       55,841.1      22,044.2
+    table scans (direct read)                       847            0.1           0.1
+    table scans (long tables)                        13            0.0           0.0
+    table scans (short tables)                   32,551            4.5           1.8
+    </HC_AWR_TABLESCAN>
+
+    <HC_AWR_TOP_GETS>
+    SQL ordered by Gets                 DB/Inst: TESTDB/TESTDB1  Snaps: 51685-51687
+    -> Resources reported for PL/SQL code includes the resources used by all SQL
+       statements called by the code.
+    -> %Total - Buffer Gets   as a percentage of Total Buffer Gets
+    -> %CPU   - CPU Time      as a percentage of Elapsed Time
+    -> %IO    - User I/O Time as a percentage of Elapsed Time
+    -> Total Buffer Gets:      11,244,920
+    -> Captured SQL account for   86.1% of Total
+    
+         Buffer                 Gets              Elapsed
+          Gets   Executions   per Exec   %Total   Time (s)  %CPU   %IO    SQL Id
+    ----------- ----------- ------------ ------ ---------- ----- ----- -------------
+      2,859,960           5    571,992.0   25.4       37.5  31.9    .8 b6f3zac81rqg2
+    Module: JDBC Thin Client
+     SELECT pc.id_card ID, pc.NAME, pc.checkresult, SUBSTR (pc.senddate, :"
+    SYS_B_00", :"SYS_B_01") trandate, SUBSTR (pc.senddate, :"SYS_B_02", :"SYS
+    _B_03")|| :"SYS_B_04"|| SUBSTR (pc.senddate, :"SYS_B_05", :"SYS_B_06")|| :"SYS_B
+    _07"|| SUBSTR (pc.senddate, :"SYS_B_08", :"SYS_B_09") trantime, :"SYS_B_10" busi
+    
+      2,594,943         186     13,951.3   23.1       15.2   8.4  70.3 4xc8wd5wbpycb
+    Module: JDBC Thin Client
+    select * from CM_NOTIFY_STORE_QUEUE WHERE FWD_FLAG =:1 and HOST_NA
+    ME =:2
+    
+        696,648          97      7,181.9    6.2        3.4  32.1     0 973xqrazabzrt
+    Module: JDBC Thin Client
+     SELECT a.seq_no,a.proc_type,a.affiche_title,a.affiche_text,a.need_accept_date
+    ,a.issue_date,a.issue_user_id,a.issue_org,b.accept_user_id,b.branch,b.auth_user_
+    id FROM cm_affiche_main a , cm_affiche_sub b WHERE a.seq_no =
+    b.seq_no and b.branch = nvl(:1 ,b.branch) and b.accept_date is null and a.proc_t
+    </HC_AWR_TOP_GETS>
+  </AWR>
+</DATABASE>
+</DB_HEALTH_CHECK_DATA>

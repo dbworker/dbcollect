@@ -1,0 +1,1037 @@
+.............
+Thu Apr 01 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Thu Apr 01 03:00:00 2021
+Starting background process VKRM
+Thu Apr 01 03:00:00 2021
+VKRM started with pid=765, OS id=35455318 ............
+Thu Apr 01 05:25:01 2021
+Thu Apr 01 06:00:00 2021
+Closing scheduler window
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter......................................................................
+Thu Apr 01 23:28:46 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Thu Apr 01 23:28:46 2021
+GTX1 started with pid=1304, OS id=31981574 
+Thu Apr 01 23:38:46 2021
+Auto-tuning: Shutting down background process GTX1...............
+Fri Apr 02 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Fri Apr 02 03:00:00 2021
+Starting background process VKRM
+Fri Apr 02 03:00:00 2021
+VKRM started with pid=1308, OS id=31981724 ..............
+Fri Apr 02 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter......................................................................
+Fri Apr 02 23:28:43 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Fri Apr 02 23:28:43 2021
+GTX1 started with pid=453, OS id=42139854 
+Fri Apr 02 23:38:43 2021
+Auto-tuning: Shutting down background process GTX1................
+Sat Apr 03 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Sat Apr 03 03:00:00 2021
+Starting background process VKRM
+Sat Apr 03 03:00:00 2021
+VKRM started with pid=144, OS id=37880100 ......................
+Sat Apr 03 08:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.
+Sat Apr 03 08:13:38 2021
+Sat Apr 03 22:55:14 2021...
+Sat Apr 03 23:25:55 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Sat Apr 03 23:25:55 2021
+GTX1 started with pid=294, OS id=46989744 
+Sat Apr 03 23:35:55 2021
+Auto-tuning: Shutting down background process GTX1...............
+Sun Apr 04 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DE]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Sun Apr 04 03:00:00 2021
+Starting background process VKRM
+Sun Apr 04 03:00:00 2021
+VKRM started with pid=783, OS id=56164498 
+Sun Apr 04 03:00:01 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"...........
+Sun Apr 04 05:25:07 2021
+Sun Apr 04 06:55:17 2021.....
+Sun Apr 04 08:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.............................................................................
+Mon Apr 05 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Mon Apr 05 03:00:00 2021
+Starting background process VKRM
+Mon Apr 05 03:00:00 2021
+VKRM started with pid=511, OS id=41550300 ...........
+Mon Apr 05 05:25:08 2021
+Mon Apr 05 06:00:00 2021
+Closing scheduler window
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.........
+Mon Apr 05 08:11:20 2021
+Mon Apr 05 23:47:58 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Mon Apr 05 23:47:58 2021
+GTX1 started with pid=214, OS id=48562470 .
+Mon Apr 05 23:57:58 2021
+Auto-tuning: Shutting down background process GTX1..............
+Tue Apr 06 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Tue Apr 06 03:00:00 2021
+Starting background process VKRM
+Tue Apr 06 03:00:00 2021
+VKRM started with pid=261, OS id=43188398 ..............
+Tue Apr 06 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter......
+Tue Apr 06 07:39:05 2021
+Tue Apr 06 08:00:11 2021
+Wed Apr 07 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DA]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Wed Apr 07 03:00:00 2021
+Starting background process VKRM
+Wed Apr 07 03:00:00 2021
+VKRM started with pid=1198, OS id=8585568 
+Wed Apr 07 03:00:02 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+Wed Apr 07 03:00:45 2021
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"..............
+Wed Apr 07 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter........
+Wed Apr 07 08:10:53 2021
+Wed Apr 07 23:32:42 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Wed Apr 07 23:32:42 2021
+GTX1 started with pid=1183, OS id=37355590 .
+Wed Apr 07 23:42:43 2021
+Auto-tuning: Shutting down background process GTX1...............
+Thu Apr 08 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Thu Apr 08 03:00:00 2021
+Starting background process VKRM
+Thu Apr 08 03:00:00 2021
+VKRM started with pid=1288, OS id=54526158 ...........
+Thu Apr 08 05:25:17 2021
+Thu Apr 08 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.........
+Thu Apr 08 08:17:58 2021
+Fri Apr 09 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DC]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Fri Apr 09 03:00:00 2021
+Starting background process VKRM
+Fri Apr 09 03:00:00 2021
+VKRM started with pid=73, OS id=25887176 
+Fri Apr 09 03:00:02 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"...........
+Fri Apr 09 05:25:18 2021
+Fri Apr 09 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter........
+Fri Apr 09 08:01:49 2021
+Sat Apr 10 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Sat Apr 10 03:00:00 2021
+Starting background process VKRM
+Sat Apr 10 03:00:00 2021
+VKRM started with pid=1024, OS id=22020400 .
+Sat Apr 10 03:03:14 2021 Checkpoint not complete.....................
+Sat Apr 10 08:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter
+Sat Apr 10 08:06:32 2021
+Sat Apr 10 23:14:22 2021..
+Sat Apr 10 23:42:25 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Sat Apr 10 23:42:25 2021
+GTX1 started with pid=1102, OS id=47644952 .
+Sat Apr 10 23:52:25 2021
+Auto-tuning: Shutting down background process GTX1...............
+Sun Apr 11 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DE]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Sun Apr 11 03:00:00 2021
+Starting background process VKRM
+Sun Apr 11 03:00:00 2021
+VKRM started with pid=1112, OS id=30736794 
+Sun Apr 11 03:00:02 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK".
+Sun Apr 11 03:03:58 2021 Checkpoint not complete.....................
+Sun Apr 11 08:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter..............................................................................
+Mon Apr 12 03:00:01 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Mon Apr 12 03:00:01 2021
+Starting background process VKRM
+Mon Apr 12 03:00:01 2021
+VKRM started with pid=1152, OS id=27984014 .
+Mon Apr 12 03:04:20 2021 Checkpoint not complete..........
+Mon Apr 12 05:25:24 2021
+Mon Apr 12 06:00:00 2021
+Closing scheduler window
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.......
+Mon Apr 12 07:58:15 2021
+Mon Apr 12 23:23:00 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Mon Apr 12 23:23:00 2021
+GTX1 started with pid=1229, OS id=34275810 .
+Mon Apr 12 23:33:00 2021
+Auto-tuning: Shutting down background process GTX1...............
+Tue Apr 13 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32D9]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Tue Apr 13 03:00:00 2021
+Starting background process VKRM
+Tue Apr 13 03:00:00 2021
+VKRM started with pid=1069, OS id=29032902 
+Tue Apr 13 03:00:02 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK".
+Tue Apr 13 03:04:59 2021 Checkpoint not complete.
+Tue Apr 13 03:11:19 2021
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"............
+Tue Apr 13 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter........
+Tue Apr 13 08:06:22 2021
+Wed Apr 14 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DA]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Wed Apr 14 03:00:00 2021
+Starting background process VKRM
+Wed Apr 14 03:00:00 2021
+VKRM started with pid=1286, OS id=34340908 
+Wed Apr 14 03:00:06 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+Wed Apr 14 03:00:30 2021
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK".
+Wed Apr 14 03:05:01 2021 Checkpoint not complete..........
+Wed Apr 14 05:25:28 2021
+Wed Apr 14 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter......................................................................
+Wed Apr 14 23:31:09 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Wed Apr 14 23:31:09 2021
+GTX1 started with pid=556, OS id=23396854 
+Wed Apr 14 23:41:09 2021
+Auto-tuning: Shutting down background process GTX1.............
+Thu Apr 15 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DB]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Thu Apr 15 03:00:00 2021
+Starting background process VKRM
+Thu Apr 15 03:00:00 2021
+VKRM started with pid=1026, OS id=42926200 
+Thu Apr 15 03:00:02 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"..
+Thu Apr 15 03:05:58 2021 Checkpoint not complete............
+Thu Apr 15 06:00:00 2021
+Closing scheduler window
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.........
+Thu Apr 15 08:12:42 2021
+Fri Apr 16 01:31:19 2021......
+Fri Apr 16 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Fri Apr 16 03:00:00 2021
+Starting background process VKRM
+Fri Apr 16 03:00:00 2021
+VKRM started with pid=513, OS id=29360584 ..
+Fri Apr 16 03:03:23 2021 Checkpoint not complete.........
+Fri Apr 16 05:11:53 2021
+Fri Apr 16 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.........
+Fri Apr 16 08:02:15 2021
+Sat Apr 17 00:16:33 2021....
+Sat Apr 17 01:07:29 2021
+Sat Apr 17 02:14:15 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Sat Apr 17 02:14:15 2021
+GTX1 started with pid=231, OS id=36962752 .
+Sat Apr 17 02:24:15 2021
+Auto-tuning: Shutting down background process GTX1..
+Sat Apr 17 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Sat Apr 17 03:00:00 2021
+Starting background process VKRM
+Sat Apr 17 03:00:00 2021
+VKRM started with pid=225, OS id=46792980 ..
+Sat Apr 17 03:05:18 2021 Checkpoint not complete.
+Sat Apr 17 03:06:10 2021 Checkpoint not complete.........
+Sat Apr 17 05:11:58 2021
+Sat Apr 17 08:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter................................................................
+Sat Apr 17 23:47:08 2021..............
+Sun Apr 18 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Sun Apr 18 03:00:00 2021
+Starting background process VKRM
+Sun Apr 18 03:00:00 2021
+VKRM started with pid=765, OS id=7209394 ..
+Sun Apr 18 03:04:44 2021 Checkpoint not complete....................
+Sun Apr 18 08:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter....................................................................
+Mon Apr 19 00:47:27 2021.........
+Mon Apr 19 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Mon Apr 19 03:00:00 2021
+Starting background process VKRM
+Mon Apr 19 03:00:00 2021
+VKRM started with pid=1023, OS id=24117570 .
+Mon Apr 19 03:02:29 2021.
+Mon Apr 19 03:03:13 2021 Checkpoint not complete.........
+Mon Apr 19 05:11:51 2021
+Mon Apr 19 05:11:56 2021
+Mon Apr 19 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.......................................................
+Mon Apr 19 19:32:34 2021................
+Mon Apr 19 23:23:46 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Mon Apr 19 23:23:46 2021
+GTX1 started with pid=1144, OS id=33554858 .
+Mon Apr 19 23:33:52 2021
+Auto-tuning: Shutting down background process GTX1...............
+Tue Apr 20 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Tue Apr 20 03:00:00 2021
+Starting background process VKRM
+Tue Apr 20 03:00:00 2021
+VKRM started with pid=1138, OS id=35455024 ..
+Tue Apr 20 03:04:34 2021 Checkpoint not complete............
+Tue Apr 20 06:00:00 2021
+Closing scheduler window
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter............................................................................
+Wed Apr 21 00:33:29 2021..........
+Wed Apr 21 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Wed Apr 21 03:00:00 2021
+Starting background process VKRM
+Wed Apr 21 03:00:00 2021
+VKRM started with pid=572, OS id=35258738 .. Checkpoint not complete.........
+Wed Apr 21 05:12:02 2021
+Wed Apr 21 06:00:00 2021
+Closing scheduler window
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.........
+Wed Apr 21 08:13:27 2021
+Thu Apr 22 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DB]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Thu Apr 22 03:00:00 2021
+Starting background process VKRM
+Thu Apr 22 03:00:00 2021
+VKRM started with pid=246, OS id=42795384 
+Thu Apr 22 03:00:01 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+Thu Apr 22 03:00:36 2021
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"..
+Thu Apr 22 03:03:58 2021 Checkpoint not complete..
+Thu Apr 22 03:18:58 2021........
+Thu Apr 22 05:12:03 2021
+Thu Apr 22 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.........
+Thu Apr 22 08:18:29 2021
+Thu Apr 22 23:26:06 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Thu Apr 22 23:26:06 2021
+GTX1 started with pid=1031, OS id=4129072 .
+Thu Apr 22 23:36:12 2021
+Auto-tuning: Shutting down background process GTX1..............
+Fri Apr 23 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Fri Apr 23 03:00:00 2021
+Starting background process VKRM
+Fri Apr 23 03:00:00 2021
+VKRM started with pid=1030, OS id=46596526 ..
+Fri Apr 23 03:04:25 2021 Checkpoint not complete............
+Fri Apr 23 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter........
+Fri Apr 23 08:03:15 2021
+Fri Apr 23 17:30:05 2021
+CREATE SMALLFILE UNDO TABLESPACE "UNDOTBS4" DATAFILE SIZE 22635M AUTOEXTEND ON NEXT  5120K MAXSIZE  32767M BLOCKSIZE 8192
+Fri Apr 23 17:30:44 2021
+Completed: CREATE SMALLFILE UNDO TABLESPACE "UNDOTBS4" DATAFILE SIZE 22635M AUTOEXTEND ON NEXT  5120K MAXSIZE  32767M BLOCKSIZE 8192
+ALTER DATABASE ADD LOGFILE THREAD 4 GROUP 10  SIZE 524288K,
+ GROUP 11  SIZE 524288K,
+ GROUP 12  SIZE 524288K
+Completed: ALTER DATABASE ADD LOGFILE THREAD 4 GROUP 10  SIZE 524288K,
+ GROUP 11  SIZE 524288K,
+ GROUP 12  SIZE 524288K
+ALTER DATABASE ENABLE PUBLIC THREAD 4
+Completed: ALTER DATABASE ENABLE PUBLIC THREAD 4
+Fri Apr 23 17:30:51 2021
+Redo thread 4 internally disabled at seq 1 (CKPT)
+Fri Apr 23 17:30:51 2021
+Fri Apr 23 17:31:36 2021
+Reconfiguration started (old inc 4, new inc 6)
+List of instances:
+ 1 2 4 (myinst: 1) 
+ Global Resource Directory frozen
+ Communication channels reestablished
+ Master broadcasted resource hash value bitmaps
+ Non-local Process blocks cleaned out
+Fri Apr 23 17:31:36 2021
+Fri Apr 23 17:31:36 2021
+ LMS 1: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+ LMS 0: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+Fri Apr 23 17:31:36 2021
+ LMS 2: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+ Set master node info 
+ Submitted all remote-enqueue requests
+ Dwn-cvts replayed, VALBLKs dubious
+ All grantable enqueues granted
+Fri Apr 23 17:31:36 2021
+minact-scn: Master returning as live inst:2 has inc# mismatch instinc:4 cur:6 errcnt:0
+ Submitted all GCS remote-cache requests
+ Fix write in gcs resources
+Reconfiguration complete
+minact-scn: Master returning as live inst:4 has inc# mismatch instinc:0 cur:6 errcnt:0
+Fri Apr 23 17:34:02 2021
+Reconfiguration started (old inc 6, new inc 8)
+List of instances:
+ 1 2 (myinst: 1) 
+ Global Resource Directory frozen
+ * dead instance detected - domain 0 invalid = TRUE 
+ Communication channels reestablished
+Fri Apr 23 17:34:02 2021
+ * domain 0 not valid according to instance 2 
+ Master broadcasted resource hash value bitmaps
+ Non-local Process blocks cleaned out
+Fri Apr 23 17:34:02 2021
+ LMS 2: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+Fri Apr 23 17:34:02 2021
+ LMS 0: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+Fri Apr 23 17:34:02 2021
+ LMS 1: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+ Set master node info 
+ Submitted all remote-enqueue requests
+ Dwn-cvts replayed, VALBLKs dubious
+ All grantable enqueues granted
+ Post SMON to start 1st pass IR
+Fri Apr 23 17:34:02 2021
+Instance recovery: looking for dead threads
+Beginning instance recovery of 1 threads
+ parallel recovery setup failed: using serial mode
+Started redo scan
+ Submitted all GCS remote-cache requests
+Completed redo scan
+ read 9445 KB redo, 1639 data blocks need recovery
+ Post SMON to start 1st pass IR
+ Fix write in gcs resources
+Reconfiguration complete
+Started redo application at
+ Thread 4: logseq 2, block 2, scn 1801435457306
+Completed redo application of 8.17MB
+Completed instance recovery at
+ Thread 4: logseq 2, block 18893, scn 1801435498417
+ 1617 data blocks read, 1641 data blocks written, 9445 redo k-bytes read Thread . advanced to log sequence 3 (thread recovery)
+Redo thread 4 internally disabled at seq 3 (SMON)
+Fri Apr 23 17:34:03 2021
+minact-scn: Master considers inst:4 dead
+Fri Apr 23 17:34:04 2021.
+Fri Apr 23 17:37:21 2021
+Reconfiguration started (old inc 8, new inc 10)
+List of instances:
+ 1 2 4 (myinst: 1) 
+ Global Resource Directory frozen
+ Communication channels reestablished
+ Master broadcasted resource hash value bitmaps
+ Non-local Process blocks cleaned out
+Fri Apr 23 17:37:21 2021
+ LMS 2: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+Fri Apr 23 17:37:21 2021
+Fri Apr 23 17:37:21 2021
+ LMS 1: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+ LMS 0: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+ Set master node info 
+ Submitted all remote-enqueue requests
+ Dwn-cvts replayed, VALBLKs dubious
+ All grantable enqueues granted
+ Submitted all GCS remote-cache requests
+ Fix write in gcs resources
+Reconfiguration started (old inc 10, new inc 12)
+List of instances:
+ 1 2 4 (myinst: 1) 
+ Nested reconfiguration detected. 
+ Global Resource Directory frozen
+ Communication channels reestablished
+ Master broadcasted resource hash value bitmaps
+ Non-local Process blocks cleaned out
+ LMS 2: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+ LMS 1: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+ LMS 0: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+ Set master node info 
+ Submitted all remote-enqueue requests
+ Dwn-cvts replayed, VALBLKs dubious
+ All grantable enqueues granted
+Fri Apr 23 17:37:22 2021
+minact-scn: Master returning as live inst:2 has inc# mismatch instinc:8 cur:10 errcnt:0
+ Submitted all GCS remote-cache requests
+ Fix write in gcs resources
+Reconfiguration complete
+minact-scn: Master returning as live inst:4 has inc# mismatch instinc:0 cur:12 errcnt:0
+Fri Apr 23 17:38:37 2021
+Reconfiguration started (old inc 12, new inc 14)
+List of instances:
+ 1 2 (myinst: 1) 
+ Global Resource Directory frozen
+ * dead instance detected - domain 0 invalid = TRUE 
+ Communication channels reestablished
+Fri Apr 23 17:38:37 2021
+ * domain 0 not valid according to instance 2 
+ Master broadcasted resource hash value bitmaps
+ Non-local Process blocks cleaned out
+Fri Apr 23 17:38:37 2021
+ LMS 2: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+Fri Apr 23 17:38:37 2021
+ LMS 0: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+Fri Apr 23 17:38:37 2021
+ LMS 1: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+ Set master node info 
+ Submitted all remote-enqueue requests
+ Dwn-cvts replayed, VALBLKs dubious
+ All grantable enqueues granted
+ Post SMON to start 1st pass IR
+Fri Apr 23 17:38:38 2021
+Instance recovery: looking for dead threads
+Beginning instance recovery of 1 threads
+ parallel recovery setup failed: using serial mode
+Started redo scan
+Completed redo scan
+ read 62 KB redo, 124 data blocks need recovery
+ Submitted all GCS remote-cache requests
+ Post SMON to start 1st pass IR
+ Fix write in gcs resources
+Reconfiguration complete
+Started redo application at
+ Thread 4: logseq 4, block 2, scn 1801435531933
+Completed redo application of 0.04MB
+Completed instance recovery at
+ Thread 4: logseq 4, block 127, scn 1801435554098
+ 117 data blocks read, 127 data blocks written, 62 redo k-bytes read Thread . advanced to log sequence 5 (thread recovery)
+Redo thread 4 internally disabled at seq 5 (SMON)
+Fri Apr 23 17:38:38 2021 Checkpoint not complete
+Fri Apr 23 17:38:39 2021
+Fri Apr 23 17:38:40 2021
+Fri Apr 23 17:40:13 2021
+db_recovery_file_dest_size of 10240 MB is 61.25% used. This is a
+user-specified limit on the amount of space that will be used by this
+database for recovery-related files, and does not reflect the amount of
+space available in the underlying filesystem or ASM diskgroup....
+Fri Apr 23 18:19:42 2021....................................
+Sat Apr 24 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DD]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Sat Apr 24 03:00:00 2021
+Starting background process VKRM
+Sat Apr 24 03:00:00 2021
+VKRM started with pid=67, OS id=47644968 
+Sat Apr 24 03:00:01 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+Sat Apr 24 03:00:12 2021
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"..
+Sat Apr 24 03:08:21 2021 Checkpoint not complete....................
+Sat Apr 24 08:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter..............................................................
+Sat Apr 24 23:26:44 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Sat Apr 24 23:26:44 2021
+GTX1 started with pid=753, OS id=5898742 .
+Sat Apr 24 23:36:44 2021
+Auto-tuning: Shutting down background process GTX1
+Sat Apr 24 23:45:19 2021
+Warning: VKTM detected a time drift.
+Time drifts can result in an unexpected behavior such as time-outs. Please check trace file for more details...............
+Sun Apr 25 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DE]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Sun Apr 25 03:00:00 2021
+Starting background process VKRM
+Sun Apr 25 03:00:00 2021
+VKRM started with pid=1019, OS id=26476674 
+Sun Apr 25 03:00:05 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+Sun Apr 25 03:00:20 2021
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"..
+Sun Apr 25 03:05:36 2021 Checkpoint not complete....................
+Sun Apr 25 08:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.
+Sun Apr 25 08:13:24 2021
+Sun Apr 25 08:14:00 2021
+Sun Apr 25 10:36:06 2021..........................................
+Sun Apr 25 20:51:18 2021..........................
+Mon Apr 26 03:00:01 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Mon Apr 26 03:00:01 2021
+Starting background process VKRM
+Mon Apr 26 03:00:01 2021
+VKRM started with pid=1276, OS id=50004034 ...........
+Mon Apr 26 05:12:12 2021
+Mon Apr 26 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter...................................................
+Mon Apr 26 18:38:37 2021..
+Mon Apr 26 18:53:37 2021..................................
+Tue Apr 27 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32D9]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Tue Apr 27 03:00:00 2021
+Starting background process VKRM
+Tue Apr 27 03:00:00 2021
+VKRM started with pid=1308, OS id=39583862 
+Tue Apr 27 03:00:00 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"...........
+Tue Apr 27 05:12:15 2021
+Tue Apr 27 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.........
+Tue Apr 27 08:11:54 2021
+Tue Apr 27 23:27:21 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Tue Apr 27 23:27:21 2021
+GTX1 started with pid=1375, OS id=49938884 
+Tue Apr 27 23:37:21 2021
+Auto-tuning: Shutting down background process GTX1................
+Wed Apr 28 02:39:18 2021..
+Wed Apr 28 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Wed Apr 28 03:00:00 2021
+Starting background process VKRM
+Wed Apr 28 03:00:00 2021
+VKRM started with pid=1364, OS id=53215570 ..............
+Wed Apr 28 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter........
+Wed Apr 28 08:02:39 2021
+Thu Apr 29 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DB]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Thu Apr 29 03:00:00 2021
+Starting background process VKRM
+Thu Apr 29 03:00:00 2021
+VKRM started with pid=1256, OS id=40370560 
+Thu Apr 29 03:00:01 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+Thu Apr 29 03:00:51 2021
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"..............
+Thu Apr 29 06:00:00 2021
+Closing scheduler window
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.........
+Thu Apr 29 08:13:48 2021
+Thu Apr 29 23:46:01 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Thu Apr 29 23:46:01 2021
+GTX1 started with pid=761, OS id=39452860 .
+Thu Apr 29 23:56:07 2021
+Auto-tuning: Shutting down background process GTX1.............
+Fri Apr 30 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Fri Apr 30 03:00:00 2021
+Starting background process VKRM
+Fri Apr 30 03:00:00 2021
+VKRM started with pid=777, OS id=52232528 ..............
+Fri Apr 30 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.....................................................................................
+Sat May 01 03:00:01 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Sat May 01 03:00:01 2021
+Starting background process VKRM
+Sat May 01 03:00:01 2021
+VKRM started with pid=482, OS id=26018288 ...........
+Sat May 01 05:12:24 2021
+Sat May 01 08:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.............................................................................
+Sun May 02 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DE]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Sun May 02 03:00:00 2021
+Starting background process VKRM
+Sun May 02 03:00:00 2021
+VKRM started with pid=766, OS id=23593354 
+Sun May 02 03:00:01 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+Sun May 02 03:02:44 2021
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"......................
+Sun May 02 08:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.............................................................
+Sun May 02 23:19:08 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Sun May 02 23:19:08 2021
+GTX1 started with pid=1042, OS id=22872552 .
+Sun May 02 23:29:14 2021
+Auto-tuning: Shutting down background process GTX1...............
+Mon May 03 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DF]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Mon May 03 03:00:00 2021
+Starting background process VKRM
+Mon May 03 03:00:00 2021
+VKRM started with pid=1053, OS id=41615386 
+Mon May 03 03:00:07 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+Mon May 03 03:00:35 2021
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"...........
+Mon May 03 05:12:28 2021
+Mon May 03 06:00:00 2021
+Closing scheduler window
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter........
+Mon May 03 08:02:42 2021
+Tue May 04 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Tue May 04 03:00:00 2021
+Starting background process VKRM
+Tue May 04 03:00:00 2021
+VKRM started with pid=1123, OS id=48628062 ...........
+Tue May 04 05:12:30 2021
+Tue May 04 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter......................................................................................
+Wed May 05 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DA]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Wed May 05 03:00:00 2021
+Starting background process VKRM
+Wed May 05 03:00:00 2021
+VKRM started with pid=1174, OS id=27132260 
+Wed May 05 03:00:03 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+Wed May 05 03:00:46 2021
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"..............
+Wed May 05 06:00:00 2021
+Closing scheduler window
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter......................................................................
+Wed May 05 23:35:30 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Wed May 05 23:35:30 2021
+GTX1 started with pid=1220, OS id=30147058 .
+Wed May 05 23:45:30 2021
+Auto-tuning: Shutting down background process GTX1..............
+Thu May 06 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DB]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Thu May 06 03:00:00 2021
+Starting background process VKRM
+Thu May 06 03:00:00 2021
+VKRM started with pid=1217, OS id=7537056 
+Thu May 06 03:00:08 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"..
+Thu May 06 03:03:06 2021
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK".........
+Thu May 06 05:12:34 2021
+Thu May 06 06:00:00 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.......
+Thu May 06 07:52:56 2021
+Thu May 06 07:53:12 2021
+Fri May 07 03:00:00 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Fri May 07 03:00:00 2021
+Starting background process VKRM
+Fri May 07 03:00:00 2021
+VKRM started with pid=199, OS id=36962454 ..........
+Fri May 07 05:12:37 2021
+Fri May 07 06:00:00 2021
+Closing scheduler window
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter................................................................................
+Sat May 08 01:28:17 2021.......
+Sat May 08 03:00:00 2021
+Setting Resource Manager plan SCHEDULER[0x32DD]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Sat May 08 03:00:00 2021
+Starting background process VKRM
+Sat May 08 03:00:00 2021
+VKRM started with pid=223, OS id=22872416 
+Sat May 08 03:00:02 2021
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"......................
+Sat May 08 08:00:00 2021
+Closing scheduler window
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter
+Sat May 08 08:07:24 2021
+Sat May 08 11:17:19 2021
+Reconfiguration started (old inc 14, new inc 16)
+List of instances:
+ 1 2 4 (myinst: 1) 
+ Global Resource Directory frozen
+ Communication channels reestablished
+ Master broadcasted resource hash value bitmaps
+ Non-local Process blocks cleaned out
+Sat May 08 11:17:19 2021
+Sat May 08 11:17:19 2021
+ LMS 0: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+ LMS 1: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+Sat May 08 11:17:19 2021
+ LMS 2: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+ Set master node info 
+ Submitted all remote-enqueue requests
+ Dwn-cvts replayed, VALBLKs dubious
+ All grantable enqueues granted
+ Submitted all GCS remote-cache requests
+ Fix write in gcs resources
+Reconfiguration complete
+Sat May 08 11:17:20 2021
+minact-scn: Master returning as live inst:4 has inc# mismatch instinc:0 cur:16 errcnt:0
+Sat May 08 11:22:15 2021
+db_recovery_file_dest_size of 10240 MB is 61.25% used. This is a
+user-specified limit on the amount of space that will be used by this
+database for recovery-related files, and does not reflect the amount of
+space available in the underlying filesystem or ASM diskgroup...
+Sat May 08 11:52:13 2021
+Reconfiguration started (old inc 16, new inc 18)
+List of instances:
+ 1 2 (myinst: 1) 
+ Global Resource Directory frozen
+ * dead instance detected - domain 0 invalid = TRUE 
+ Communication channels reestablished
+Sat May 08 11:52:13 2021
+ * domain 0 not valid according to instance 2 
+ Master broadcasted resource hash value bitmaps
+ Non-local Process blocks cleaned out
+Sat May 08 11:52:13 2021
+ LMS 0: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+Sat May 08 11:52:13 2021
+ LMS 1: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+Sat May 08 11:52:13 2021
+ LMS 2: 0 GCS shadows cancelled, 0 closed, 0 Xw survived
+ Set master node info 
+ Submitted all remote-enqueue requests
+ Dwn-cvts replayed, VALBLKs dubious
+ All grantable enqueues granted
+ Post SMON to start 1st pass IR
+Sat May 08 11:52:13 2021
+Instance recovery: looking for dead threads
+Instance recovery: lock domain invalid but no dead threads
+ Submitted all GCS remote-cache requests
+ Post SMON to start 1st pass IR
+ Fix write in gcs resources
+Reconfiguration complete
+Sat May 08 11:52:16 2021
+minact-scn: Master considers inst:4 dead.......
+Sat May 08 13:28:18 2021........................................................
+Sun May 09 02:59:59 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Sun May 09 02:59:59 2021
+Starting background process VKRM
+Sun May 09 02:59:59 2021
+VKRM started with pid=1301, OS id=30933374 ..........
+Sun May 09 05:12:42 2021
+Sun May 09 07:59:58 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter..................................................
+Sun May 09 20:28:28 2021...........
+Sun May 09 23:09:27 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Sun May 09 23:09:27 2021
+GTX1 started with pid=1361, OS id=25493718 .
+Sun May 09 23:19:27 2021
+Auto-tuning: Shutting down background process GTX1................
+Mon May 10 02:59:57 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Mon May 10 02:59:57 2021
+Starting background process VKRM
+Mon May 10 02:59:57 2021
+VKRM started with pid=1323, OS id=40763416 .
+Mon May 10 03:04:26 2021 Checkpoint not complete.............
+Mon May 10 05:59:57 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter......................................................................................
+Tue May 11 02:59:56 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Tue May 11 02:59:56 2021
+Starting background process VKRM
+Tue May 11 02:59:56 2021
+VKRM started with pid=1083, OS id=36569310 ..........
+Tue May 11 05:12:43 2021
+Tue May 11 05:59:56 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.......
+Tue May 11 07:57:06 2021
+Wed May 12 02:59:54 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Wed May 12 02:59:54 2021
+Starting background process VKRM
+Wed May 12 02:59:54 2021
+VKRM started with pid=1350, OS id=52756990 ..
+Wed May 12 03:04:54 2021 Checkpoint not complete............
+Wed May 12 05:59:54 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.....................................................................................
+Thu May 13 02:59:53 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Thu May 13 02:59:53 2021
+Starting background process VKRM
+Thu May 13 02:59:53 2021
+VKRM started with pid=180, OS id=45941092 ..
+Thu May 13 03:04:42 2021 Checkpoint not complete............
+Thu May 13 05:59:53 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.............
+Thu May 13 09:10:52 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Thu May 13 09:10:52 2021
+GTX1 started with pid=788, OS id=53805360 .
+Thu May 13 09:20:52 2021
+Auto-tuning: Shutting down background process GTX1........................................................
+Thu May 13 23:24:34 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Thu May 13 23:24:34 2021
+GTX1 started with pid=1018, OS id=16974018 .
+Thu May 13 23:34:34 2021
+Auto-tuning: Shutting down background process GTX1...............
+Fri May 14 02:59:52 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Fri May 14 02:59:52 2021
+Starting background process VKRM
+Fri May 14 02:59:52 2021
+VKRM started with pid=1063, OS id=46989816 ..
+Fri May 14 03:03:25 2021 Checkpoint not complete............
+Fri May 14 05:59:51 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter....
+Fri May 14 06:45:53 2021............................................................................
+Sat May 15 01:16:22 2021.......
+Sat May 15 02:59:50 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Sat May 15 02:59:50 2021
+Starting background process VKRM
+Sat May 15 02:59:50 2021
+VKRM started with pid=1187, OS id=6881784 ..
+Sat May 15 03:03:28 2021 Checkpoint not complete....................
+Sat May 15 07:59:50 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.
+Sat May 15 08:15:00 2021
+Sat May 15 08:15:29 2021
+Sat May 15 23:23:13 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Sat May 15 23:23:13 2021
+GTX1 started with pid=1223, OS id=26345844 .
+Sat May 15 23:33:13 2021
+Auto-tuning: Shutting down background process GTX1..............
+Sun May 16 02:59:49 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Sun May 16 02:59:49 2021
+Starting background process VKRM
+Sun May 16 02:59:49 2021
+VKRM started with pid=1046, OS id=36306962 ..
+Sun May 16 03:03:47 2021 Checkpoint not complete..
+Sun May 16 03:16:59 2021...........
+Sun May 16 05:51:52 2021
+Sun May 16 07:59:48 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter..................................................................
+Mon May 17 00:02:29 2021 Checkpoint not complete..
+Mon May 17 00:27:39 2021..........
+Mon May 17 02:59:47 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Mon May 17 02:59:47 2021
+Starting background process VKRM
+Mon May 17 02:59:47 2021
+VKRM started with pid=795, OS id=43843954 ..
+Mon May 17 03:04:27 2021 Checkpoint not complete............
+Mon May 17 05:51:56 2021
+Mon May 17 05:59:47 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.................
+Mon May 17 10:02:32 2021...................................................................
+Tue May 18 02:18:04 2021...
+Tue May 18 02:59:46 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Tue May 18 02:59:46 2021
+Starting background process VKRM
+Tue May 18 02:59:46 2021
+VKRM started with pid=741, OS id=22610064 ..
+Tue May 18 03:03:34 2021 Checkpoint not complete............
+Tue May 18 05:59:46 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.........
+Tue May 18 08:16:53 2021
+Tue May 18 23:23:52 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Tue May 18 23:23:52 2021
+GTX1 started with pid=1313, OS id=42991802 .
+Tue May 18 23:33:52 2021
+Auto-tuning: Shutting down background process GTX1..............
+Wed May 19 02:59:45 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Wed May 19 02:59:45 2021
+Starting background process VKRM
+Wed May 19 02:59:46 2021
+VKRM started with pid=1311, OS id=21102752 .
+Wed May 19 03:03:34 2021.
+Wed May 19 03:04:19 2021 Checkpoint not complete............
+Wed May 19 05:51:55 2021
+Wed May 19 05:59:44 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.........
+Wed May 19 08:08:06 2021
+Wed May 19 23:32:22 2021
+Auto-tuning: Starting background process GTX1
+Starting background process GTX1
+Wed May 19 23:32:22 2021
+GTX1 started with pid=795, OS id=23724070 ..
+Wed May 19 23:42:22 2021
+Auto-tuning: Shutting down background process GTX1.............
+Thu May 20 02:59:43 2021
+Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+Thu May 20 02:59:43 2021
+Starting background process VKRM
+Thu May 20 02:59:43 2021
+VKRM started with pid=1348, OS id=29229254 .............
+Thu May 20 05:59:43 2021
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager plan via parameter.........
+Thu May 20 08:18:54 2021

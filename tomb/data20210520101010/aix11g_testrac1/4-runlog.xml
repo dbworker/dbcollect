@@ -1,0 +1,123 @@
+
+<DB_HEALTH_CHECK_DATA versoin="0.3.0">
+<DATABASE type="Oracle">
+    <HC_LSNR_TRAIL_COUNT v="10"/>
+    <HC_LSNR_LOG_SIZEM   v="49"/>
+
+    <HC_CRS_IFCFG>
+    en12  10.16.10.0  global  public
+    en13  10.20.20.0  global  cluster_interconnect
+    </HC_CRS_IFCFG>
+
+    <HC_CRS_STAT>
+    --------------------------------------------------------------------------------
+    NAME           TARGET  STATE        SERVER                   STATE_DETAILS       
+    --------------------------------------------------------------------------------
+    Local Resources
+    --------------------------------------------------------------------------------
+    ora.ARCH.dg
+                   ONLINE  ONLINE       test1                                       
+                   ONLINE  ONLINE       test2                                       
+    ora.DATA.dg
+                   ONLINE  ONLINE       test1                                       
+                   ONLINE  ONLINE       test2                                       
+    ora.DATA2.dg
+                   ONLINE  ONLINE       test1                                       
+                   ONLINE  ONLINE       test2                                       
+    ora.LISTENER.lsnr
+                   ONLINE  ONLINE       test1                                       
+                   ONLINE  ONLINE       test2                                       
+    ora.OCR.dg
+                   ONLINE  ONLINE       test1                                       
+                   ONLINE  ONLINE       test2                                       
+    ora.asm
+                   ONLINE  ONLINE       test1                   Started             
+                   ONLINE  ONLINE       test2                   Started             
+    ora.gsd
+                   OFFLINE OFFLINE      test1                                       
+                   OFFLINE OFFLINE      test2                                       
+    ora.net1.network
+                   ONLINE  ONLINE       test1                                       
+                   ONLINE  ONLINE       test2                                       
+    ora.ons
+                   ONLINE  ONLINE       test1                                       
+                   ONLINE  ONLINE       test2                                       
+    ora.registry.acfs
+                   ONLINE  ONLINE       test1                                       
+                   ONLINE  ONLINE       test2                                       
+    --------------------------------------------------------------------------------
+    Cluster Resources
+    --------------------------------------------------------------------------------
+    ora.LISTENER_SCAN1.lsnr
+          1        ONLINE  ONLINE       test1                                       
+    ora.cvu
+          1        ONLINE  ONLINE       test1                                       
+    ora.front.db
+          1        ONLINE  ONLINE       test1                   Open                
+          2        ONLINE  ONLINE       test2                   Open                
+    ora.test1.vip
+          1        ONLINE  ONLINE       test1                                       
+    ora.test2.vip
+          1        ONLINE  ONLINE       test2                                       
+    ora.oc4j
+          1        ONLINE  ONLINE       test1                                       
+    ora.scan1.vip
+          1        ONLINE  ONLINE       test1                                       
+    </HC_CRS_STAT>
+    <HC_CRS_OCSSD_ERROR>
+    
+    </HC_CRS_OCSSD_ERROR>
+    <HC_CRS_OCSSD_LOG>
+    2021-05-20 14:54:52.301: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:54:52.301: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:54:56.313: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:54:56.313: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:00.333: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:55:00.334: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:04.335: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:55:04.335: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:08.336: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:55:08.336: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:12.337: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:55:12.337: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:16.338: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:55:16.338: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:20.339: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:55:20.339: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:24.340: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:55:24.340: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:28.342: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:55:28.342: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:32.345: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:55:32.345: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:36.354: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:55:36.355: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:40.369: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:55:40.369: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:44.378: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:55:44.379: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:48.395: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:55:48.395: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:52.409: [    CSSD][6966]clssnmSendingThread: sending status msg to all nodes
+    2021-05-20 14:55:52.409: [    CSSD][6966]clssnmSendingThread: sent 4 status msgs to all nodes
+    2021-05-20 14:55:53.110: [    CSSD][1029]clssscSelect: cookie accept request 11099c8e0
+    2021-05-20 14:55:53.110: [    CSSD][1029]clssgmAllocProc: (113ee49d0) allocated
+    2021-05-20 14:55:53.110: [    CSSD][1029]clssgmClientConnectMsg: properties of cmProc 113ee49d0 - 0,1,2,3,4
+    2021-05-20 14:55:53.110: [    CSSD][1029]clssgmClientConnectMsg: Connect from con(1229e3e0) proc(113ee49d0) pid(53805374) version 11:2:1:4, properties: 0,1,2,3,4
+    2021-05-20 14:55:53.110: [    CSSD][1029]clssgmClientConnectMsg: msg flags 0x0000
+    2021-05-20 14:55:53.179: [    CSSD][4910]clssnmSetupReadLease: status 1
+    2021-05-20 14:55:53.183: [    CSSD][3368]clssnmCompleteGMReq: Completed request type 17 with status 1
+    2021-05-20 14:55:53.183: [    CSSD][3368]clssgmDoneQEle: re-queueing req 11061b990 status 1
+    2021-05-20 14:55:53.183: [    CSSD][1029]clssgmCheckReqNMCompletion: Completing request type 17 for proc (113ee49d0), operation status 1, client status 0
+    2021-05-20 14:55:53.197: [    CSSD][1029]clssnmGetNodeNumber: test1 
+    2021-05-20 14:55:53.198: [    CSSD][1029]clssnmGetNodeNumber: test1 
+    2021-05-20 14:55:53.199: [    CSSD][1029]clssnmGetNodeNumber: test2 
+    2021-05-20 14:55:53.200: [    CSSD][1029]clssnmGetNodeNumber: test2 
+    2021-05-20 14:55:53.201: [    CSSD][1029]clssnmGetNodeNumber: frontc 
+    2021-05-20 14:55:53.202: [    CSSD][1029]clssnmGetNodeNumber: frontc 
+    2021-05-20 14:55:53.409: [    CSSD][1029]clssgmDeadProc: proc 113ee49d0
+    2021-05-20 14:55:53.409: [    CSSD][1029]clssgmDestroyProc: cleaning up proc(113ee49d0) con(1229e3e0) skgpid  ospid 53805374 with 0 clients, refcount 0
+    2021-05-20 14:55:53.409: [    CSSD][1029]clssgmDiscEndpcl: gipcDestroy 1229e3e0
+    </HC_CRS_OCSSD_LOG>
+</DATABASE>
+</DB_HEALTH_CHECK_DATA>

@@ -1,0 +1,41 @@
+<DB_HEALTH_CHECK_DATA versoin="0.3.0">
+<DATABASE type="Oracle">
+  <BACKUP>
+    <HC_BACKUP_IN24HOUR  v="198"/>
+    <HC_BACKUP_DB_WEEKLY_MIN  v="40 GB"/>
+    <HC_BACKUP_DB_WEEKLY_MAX  v="472 GB"/>
+    <HC_BACKUP_ARCH_DAILY_MIN  v="4222 MB"/>
+    <HC_BACKUP_ARCH_DAILY_MAX  v="13888 MB"/>
+    <HC_BACKUP_DB>
+    OBJECT_TYPE   START_TIME             DURA          INPUT_BYTES         OUTPUT_BYTES STATUS               OUTPUT_DEVICE_TYP
+    ------------- ------------------- ------- -------------------- -------------------- -------------------- -----------------
+    DB INCR       2021-05-13 00:04:58    1479      250,282,508,288       43,230,691,328 COMPLETED            DISK
+    DB INCR       2021-05-13 23:54:15    1487      250,431,406,080       43,252,711,424 COMPLETED            DISK
+    DB INCR       2021-05-14 23:46:18    1479      250,754,367,488       43,295,703,040 COMPLETED            DISK
+    DB INCR       2021-05-16 00:38:24    1479      251,054,260,224       43,338,694,656 COMPLETED            DISK
+    DB INCR       2021-05-17 01:26:30    1497      251,365,687,296       43,378,540,544 COMPLETED            DISK
+    DB INCR       2021-05-13 02:53:03     637      690,426,478,592      506,564,968,448 COMPLETED            SBT_TAPE
+    DB INCR       2021-05-14 02:53:05     596      690,443,255,808      506,586,988,544 COMPLETED            SBT_TAPE
+    DB INCR       2021-05-15 02:53:07     586      690,461,081,600      506,602,717,184 COMPLETED            SBT_TAPE
+    DB INCR       2021-05-16 02:53:10     704      690,479,955,968      506,640,465,920 COMPLETED            SBT_TAPE
+    DB INCR       2021-05-17 02:53:11     691      690,496,733,184      506,687,651,840 COMPLETED            SBT_TAPE
+    </HC_BACKUP_DB>
+    <HC_BACKUP_ARCH>
+    OBJECT_TYPE   START_TIME             DURA          INPUT_BYTES         OUTPUT_BYTES STATUS               OUTPUT_DEVICE_TYP
+    ------------- ------------------- ------- -------------------- -------------------- -------------------- -----------------
+    ARCHIVELOG    2021-05-20 12:36:40      73          126,264,832          127,139,840 COMPLETED            SBT_TAPE
+    ARCHIVELOG    2021-05-20 12:51:41      72          124,525,568          125,304,832 COMPLETED            SBT_TAPE
+    ARCHIVELOG    2021-05-20 13:06:40      72          129,012,736          129,761,280 COMPLETED            SBT_TAPE
+    ARCHIVELOG    2021-05-20 13:21:40      73          127,992,832          128,712,704 COMPLETED            SBT_TAPE
+    ARCHIVELOG    2021-05-20 13:36:40      73          123,212,800          123,994,112 COMPLETED            SBT_TAPE
+    ARCHIVELOG    2021-05-20 13:51:42      72          125,392,384          126,091,264 COMPLETED            SBT_TAPE
+    ARCHIVELOG    2021-05-20 14:06:40      73          129,976,320          130,547,712 COMPLETED            SBT_TAPE
+    ARCHIVELOG    2021-05-20 14:21:41      72          128,951,808          129,761,280 COMPLETED            SBT_TAPE
+    ARCHIVELOG    2021-05-20 14:36:40      73          124,587,520          125,566,976 COMPLETED            SBT_TAPE
+    ARCHIVELOG    2021-05-20 14:51:41      72          126,174,208          127,139,840 COMPLETED            SBT_TAPE
+    </HC_BACKUP_ARCH>
+    <HC_BACKUP_FAILED>
+    </HC_BACKUP_FAILED>
+  </BACKUP>
+</DATABASE>
+</DB_HEALTH_CHECK_DATA>

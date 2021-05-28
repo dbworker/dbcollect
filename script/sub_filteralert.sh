@@ -12,8 +12,9 @@
 # Thread 1 advanced to log sequence 746728 (LGWR switch)
 #   Current log# 1 seq# 746728 mem# 0: +DATA/ORCL/ONLINELOG/group_1.270.994000595
 #   Current log# 1 seq# 746728 mem# 1: +DATA/ORCL/ONLINELOG/group_1.269.994000595
-awk 'BEGIN{RS=EOF}{gsub(/\nThread . advanced to /," Thread . advanced to ");print}' alert_1.tmp | grep -v "(LGWR switch)" | grep -v "^  Current log#" > alert_2.tmp
-
+awk 'BEGIN{RS=EOF}{gsub(/\nThread . advanced to /," Thread . advanced to ");print}' alert_1.tmp > alert_2.tmp
+sed 's/.*(LGWR switch)$/\./g' alert_2.tmp | grep -v "^  Current log#"  > alert_1.tmp
+mv alert_1.tmp alert_2.tmp
 
 # Filter case 2 - Redo archive
 # Tue Jan 19 02:14:41 2021
@@ -36,4 +37,4 @@ awk 'BEGIN{RS=EOF}{gsub(/\nALTER SYSTEM ARCHIVE LOG/," ALTER SYSTEM ARCHIVE LOG"
 # Checkpoint not complete
 grep -v "cannot allocate new log" alert_1.tmp | awk 'BEGIN{RS=EOF}{gsub(/\nCheckpoint not/," Checkpoint not");print}' > alert_2.tmp
 
-mv alert_2.tmp alert_1.tmp
+awk 'BEGIN{RS=EOF}{gsub(/\n\./, ".");print}' alert_2.tmp >   alert_1.tmp

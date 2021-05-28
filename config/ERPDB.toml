@@ -1,7 +1,0 @@
-custom="CMCBANK"
-doctitle="ERP Database Health Check Report"
-db_alias="ERP-DB"
-
-db_type="Oracle"
-ORACLE_SID="orcl"
-

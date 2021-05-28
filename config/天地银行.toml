@@ -1,7 +1,0 @@
-custom="天地银行"
-doctitle="财务数据库巡检"
-db_alias="财务库"
-
-db_type="Oracle"
-ORACLE_SID="orcl"
-

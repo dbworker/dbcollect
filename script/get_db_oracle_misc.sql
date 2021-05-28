@@ -1,11 +1,12 @@
 ---------------------------------------
 -- misc.out used by dumping alertlog, create awr report
---   alert path, sid
---   lastmonth's year / month (Abbr.) / month(01..12)
---   1/0 as uniform_log_timestamp_format parameter is 'TRUE' or not
---   log mode
---   is rac?
-
+--   1 alert path
+--   2 sid
+--   3,4,5: lastmonth's year / month (Abbr.) / month(01..12)
+--   6: 1/0 as uniform_log_timestamp_format parameter is 'TRUE' or not
+--   7: log mode
+--   8: is rac?
+--   9: version
 set heading off
 
 -- alert path
@@ -28,7 +29,7 @@ select to_char(trunc(sysdate-30,'MONTH'), 'YYYY') ||chr(10)||
        to_char(trunc(sysdate-30,'MONTH'), 'Mon')  ||chr(10)||
        to_char(trunc(sysdate-30,'MONTH'), 'MM') val from dual;
 
--- after oracle 12c, alert's time string format changed
+-- start from 12.2, alert's time string format changed
 col cnt for 99
 select count(1) cnt from v$parameter where name='uniform_log_timestamp_format'
     and value='TRUE';
@@ -36,5 +37,6 @@ select count(1) cnt from v$parameter where name='uniform_log_timestamp_format'
 select log_mode from v$database;
 
 select parallel from v$instance;
+select substr(version, 1, 4) from v$instance;
 
 spool off

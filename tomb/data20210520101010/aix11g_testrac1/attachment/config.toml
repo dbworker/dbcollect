@@ -1,0 +1,8 @@
+customer="CMCBANK"
+doctitle="TESTHOST_TESTDB1 Database Health Check Report"
+
+db_alias="aix11g_testrac1"
+
+db_type="Oracle"
+ORACLE_SID="TESTDB1"
+

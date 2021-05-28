@@ -1,0 +1,54 @@
+<DB_HEALTH_CHECK_DATA versoin="0.3.0">
+<DATABASE type="Oracle">
+  <SECURITY>
+    <HC_DB_SCN           v="1803229417156"/>
+    <HC_AUDIT_STRATEGY   v="DB"/>
+    <HC_DB_AUDTAB_SIZEM  v="368 MB"/>
+    <HC_PATCH_INFO>
+    TO_CHAR(ACTION_TIME,'YYYY/MM/DD')                                           NAMESPACE    COMMENTS
+    --------------------------------------------------------------------------- ------------ ----------------------------------------------------------------------
+    2015/06/04                                                                  SERVER       Patchset 11.2.0.2.0
+    </HC_PATCH_INFO>
+    <HC_USE_SYS_TBS>
+    </HC_USE_SYS_TBS>
+    <HC_DBA_GRANTED>
+    GRANTEE              GRANTED_ROLE
+    -------------------- ------------------------------
+    ESB                  DBA
+    FRONT                DBA
+    BRANCH               DBA
+    TIPS                 DBA
+    WPM                  DBA
+    INTEGRATOR           DBA
+    NCPAY                DBA
+    ECIS                 DBA
+    ZFB                  DBA
+    TELLER               DBA
+    </HC_DBA_GRANTED>
+    <HC_PROFILE_PASSWD>
+    PROFILE              RESOURCE_NAME                  LIMIT
+    -------------------- ------------------------------ ------------------------------
+    DEFAULT              FAILED_LOGIN_ATTEMPTS          UNLIMITED
+    DEFAULT              PASSWORD_GRACE_TIME            7
+    DEFAULT              PASSWORD_LIFE_TIME             UNLIMITED
+    DEFAULT              PASSWORD_LOCK_TIME             1
+    DEFAULT              PASSWORD_REUSE_MAX             UNLIMITED
+    DEFAULT              PASSWORD_REUSE_TIME            UNLIMITED
+    DEFAULT              PASSWORD_VERIFY_FUNCTION       NULL
+    </HC_PROFILE_PASSWD>
+    <HC_USER_STATUS>
+    USERNAME             ACCOUN EXPIRY_DATE
+    -------------------- ------ -------------------
+    INTEGRATOR           OPEN
+    MGMT_VIEW            OPEN
+    NCPAY                OPEN
+    QUERY                OPEN
+    SBFSY                OPEN
+    SSCMONITOR           OPEN
+    SSO                  OPEN
+    APPER                OPEN
+    TIPS                 OPEN
+    </HC_USER_STATUS>
+  </SECURITY>
+</DATABASE>
+</DB_HEALTH_CHECK_DATA>
