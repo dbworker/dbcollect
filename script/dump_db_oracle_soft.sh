@@ -91,7 +91,7 @@ ECHO_C "    <HC_LSNR_LOG_SIZEM   v=" `expr $lsnrSize / 1048576 `
 
 mIsRAC=`head  -8 misc.out |tail -1`
 mDbVer=`head  -9 misc.out |tail -1`
-mDbVer=`expr $mDbVer `
+mTmp=`expr $mDbVer \< 12`
 
 if [ "$mIsRAC" == "YES" ]; then
     grid_bin=`ps -ef|grep ocssd.bin |grep -v grep | awk '{print $NF}'`
@@ -108,7 +108,7 @@ if [ "$mIsRAC" == "YES" ]; then
     ECHO_M      "`$crs_bin stat res -t`"
     ECHO   "    </HC_CRS_STAT>"
 
-    if [ "$mDbVer" -lt 12 ]; then
+    if [ "$mTmp" -eq 1 ]; then
         # 11g, crs log in $GRID_HOME/log/
         csstmp=`hostname`/cssd
         grid_home=`ps -ef|grep ocssd.bin |grep -v grep | awk '{print $NF}'`
