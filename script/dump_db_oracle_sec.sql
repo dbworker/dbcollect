@@ -31,10 +31,11 @@ select '    <HC_DB_AUDTAB_SIZEM  v="' || round(bytes/1048576) || ' MB"/>' from d
     where segment_name='AUD$' and rownum=1;
 
 set heading on
+col ACTION_TIME for a12
 col namespace for a12
 col comments for a70
 prompt <HC_PATCH_INFO>
-select '   ' X_X,to_char(ACTION_TIME,'yyyy/mm/dd'),NAMESPACE,COMMENTS from dba_registry_history where ACTION_TIME is not null;
+select '   ' X_X,to_char(ACTION_TIME,'yyyy/mm/dd') ACTION_TIME,NAMESPACE,COMMENTS from dba_registry_history where ACTION_TIME is not null;
 prompt </HC_PATCH_INFO>
 
 prompt <HC_USE_SYS_TBS>

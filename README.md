@@ -6,7 +6,7 @@ Database health check is a routine task for DBA. Usually, for each database DBA 
 
 Now, these tools help doing most of foundation work in health check:
 - [dbcollect](https://github.com/dbworker/dbcollect) help collecting database info from many v$_* views, alert log, etc.
-- [dbtools](https://marketplace.visualstudio.com/items?itemName=dbworker.dbtools) is a vscode's extension, help exporting many health check reports automatically, just on one click; Further more, it use **rule-based check**, point out database's problems clearly in vscode IDE.
+- [dbtools](https://marketplace.visualstudio.com/items?itemName=dbworker.dbtools) is a vscode's extension, help exporting many health check reports automatically, just on one click; Further more, it use **rule-based check**([dbtools-rule](https://github.com/dbworker/dbtools-rule/blob/main/oracle_rule.ini)), point out database's problems clearly in vscode IDE.
 
 **But remember that this tool is not a AI, it can't judge a database's status is OK or not, which is still DBA's duty.**
 
@@ -104,18 +104,30 @@ Don't use local language character set, such as GBK.
 
 # 5. Known issues
 
+currently v0.3.0 has some fault:
 - on PDB, some values are same to CDB$ROOT (see example file lnx19c_pdb1.tar.gz).
-- if database has large object number, some queries will slow (you can manually disable it on script)
+- if database has large object number, some queries will slow
     - HC_TABLE_USE_LONG
     - HC_BIG_TABLES
+(you can manually disable related sql on script)
 
 
-# 6. Release
+# 6. Future plan
 
-v0.3.0 at 20-May-2021
+- refine PDB info
+- item for flashback, v$recovery_area_usage
+- top transaction (top sql already in AWR)
+
+# 7. Release history
+
+**v0.3.0 at 20-May-2021**
 - add more dump item
 - in alert file, some unimportanted log was removed ( not valid for oracle12.2's uniform time format ).
 - fix issue on v$rman_status ( [issue#1](https://github.com/dbworker/dbcollect/issues/1) )
 - fix special char (<, &) on .xml ( [issue#2](https://github.com/dbworker/dbcollect/issues/2) )
 - fix dump alert log on AIX
 - fix dump crs log
+
+
+**v0.2.2 at 20-Apr-2021**
+(no formally build release)

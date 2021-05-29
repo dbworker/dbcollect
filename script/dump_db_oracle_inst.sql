@@ -69,18 +69,20 @@ col value for a50
 
 set heading on
 prompt <HC_DB_PARAMETERS>
-select '   ' X_X, name, substr(value,1,50) value from v$parameter
+select '   ' X_X, name, substr(nvl(value,'null'),1,50) value from v$parameter
     where isdefault = 'FALSE'
     order by name;
 prompt </HC_DB_PARAMETERS>
 
 col value for a30
 prompt <HC_DB_SPEC_PARAMS>
-select '   ' X_X, name, substr(value,1,30) value, isdefault from v$parameter
+select '   ' X_X, name, substr(nvl(value,'null'),1,30) value, isdefault from v$parameter
     where name in (
         'cell_offload_processing',
+        'db_files',
         'db_recovery_file_dest',
         'db_recovery_file_dest_size',
+        'deferred_segment_creation',
         'log_archive_config',
         'log_archive_dest_2',
         'memory_max_target',
@@ -92,27 +94,30 @@ select '   ' X_X, name, substr(value,1,30) value, isdefault from v$parameter
         'remote_login_passwordfile',
         'result_cache_max_size',
         'sec_case_sensitive_logon',
+        'spfile',
         'sga_max_size',
         'sga_target',
         'undo_retention'
     )
 union all
-select '   ' X_X, KSPPINM name, substr(KSPPSTVL,1,30) value,
+select '   ' X_X, KSPPINM name, substr(nvl(KSPPSTVL,'null'),1,30) value,
 decode(bitand(ksppstvf, 7),
               1,
               'FALSE',
               4,
-              'System Modified',
+              'SysMod',
               'TRUE') isdefault
 from x$ksppi a, x$ksppsv b
     where a.indx = b.indx
         and KSPPINM in (
         '_gc_policy_time',
         '_gc_undo_affinity',
-        '_optimizer_mjc_enabled',
         '_optimizer_extended_cursor_sharing_rel',
         '_optimizer_extended_cursor_sharing',
         '_optimizer_adaptive_cursor_sharing',
+        '_optimizer_mjc_enabled',
+        '_optimizer_null_aware_antijoin',
+        '_optimizer_use_feedback',
         '_undo_autotune',
         '_use_adaptive_log_file_sync',
         '_use_single_log_writer'
