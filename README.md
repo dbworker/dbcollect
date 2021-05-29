@@ -108,7 +108,7 @@ currently v0.3.0 has some fault:
 - on PDB, some values are same to CDB$ROOT (see example file lnx19c_pdb1.tar.gz).
 - if database has large object number, some queries will slow
     - HC_TABLE_USE_LONG
-    - HC_BIG_TABLES
+    - HC_BIG_TABLES  
 (you can manually disable related sql on script)
 
 
@@ -129,5 +129,5 @@ currently v0.3.0 has some fault:
 - fix dump crs log
 
 
-**v0.2.2 at 20-Apr-2021**
+**v0.2.2 at 20-Apr-2021**  
 (no formally build release)
