@@ -5,9 +5,9 @@
     <HC_AUDIT_STRATEGY   v="DB"/>
     <HC_DB_AUDTAB_SIZEM  v="368 MB"/>
     <HC_PATCH_INFO>
-    TO_CHAR(ACTION_TIME,'YYYY/MM/DD')                                           NAMESPACE    COMMENTS
-    --------------------------------------------------------------------------- ------------ ----------------------------------------------------------------------
-    2015/06/04                                                                  SERVER       Patchset 11.2.0.2.0
+    ACTION_TIME         NAMESPACE    COMMENTS
+    ------------------- ------------ ----------------------------------------------------------------------
+    2015/06/04          SERVER       Patchset 11.2.0.2.0
     </HC_PATCH_INFO>
     <HC_USE_SYS_TBS>
     </HC_USE_SYS_TBS>

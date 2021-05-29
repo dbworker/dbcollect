@@ -37,7 +37,7 @@
     cursor_sharing                                SIMILAR
     db_block_size                                 8192
     db_create_file_dest                           +DATA
-    db_domain
+    db_domain                                     null
     db_name                                       TESTDB
     db_recovery_file_dest                         +ARCH
     db_recovery_file_dest_size                    10737418240
@@ -89,9 +89,8 @@
     db_recovery_file_dest                         +ARCH                          FALSE
     db_recovery_file_dest_size                    10737418240                    FALSE
     local_listener                                 (ADDRESS=(PROTOCOL=TCP)(HOST= TRUE
-                                                  172.16.10.16)(PORT=1
-    log_archive_config                                                           TRUE
-    log_archive_dest_2                                                           TRUE
+    log_archive_config                            null                           TRUE
+    log_archive_dest_2                            null                           TRUE
     memory_max_target                             13757317120                    TRUE
     open_cursors                                  300                            FALSE
     parallel_force_local                          FALSE                          TRUE
