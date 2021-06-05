@@ -11,6 +11,9 @@ Now, these tools help doing most of foundation work in health check:
 **But remember that this tool is not a AI, it can't judge a database's status is OK or not, which is still DBA's duty.**
 
 Currently dbcollect support Oracle(>= 11g) on (Linux, AIX).
+
+Be a happy DBA: https://www.youtube.com/watch?v=05H3M8m__4o&ab_channel=dbworker
+
 # 2. How to use dbcollect
 
 Download or clone dbcollect.git to you pc, then upload to database host (Linux or AIX) with 'oracle' user.
