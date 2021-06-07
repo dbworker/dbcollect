@@ -1,14 +1,27 @@
 # 1. dbcollect
-`dbcollect` help collecting database health related information, which is foundation for db health check.
-Later these information will be processed by [dbtools](https://marketplace.visualstudio.com/items?itemName=dbworker.dbtools).
+`dbcollect` help DBA to collecting database info, which later will be processed by [dbtools](https://marketplace.visualstudio.com/items?itemName=dbworker.dbtools), to auto check db's health and export reports.
 
-Database health check is a routine task for DBA. Usually, for each database DBA have to run several commands to collect many info, after that write many health check reports(.doc) one-by-one manually.
+Usually, for health-check task, DBA  collecting info, checking info and  writting reports(.doc) for each db manually.
 
 Now, these tools help doing most of foundation work in health check:
 - [dbcollect](https://github.com/dbworker/dbcollect) help collecting database info from many v$_* views, alert log, etc.
-- [dbtools](https://marketplace.visualstudio.com/items?itemName=dbworker.dbtools) is a vscode's extension, help exporting many health check reports automatically, just on one click; Further more, it use **rule-based check**([dbtools-rule](https://github.com/dbworker/dbtools-rule/blob/main/oracle_rule.ini)), point out database's problems clearly in vscode IDE.
+- [dbtools](https://marketplace.visualstudio.com/items?itemName=dbworker.dbtools) is a vscode's extension, 
+  - help exporting many health check reports automatically;
+  - use **rule-based check**([dbtools-rule](https://github.com/dbworker/dbtools-rule/blob/main/oracle_rule.ini)), check database's health and show problems on vscode IDE.
 
-**But remember that this tool is not a AI, it can't judge a database's status is OK or not, which is still DBA's duty.**
+For example, dbcollect will dump some data like this
+```
+<DB_HEALTH_CHECK_DATA versoin="0.3.0">
+<DATABASE type="Oracle">
+  <INSTANCE>
+    <HC_DB_NAME          v="TESTDB"/>
+    <HC_DB_ID            v="8810916561"/>
+    <HC_DB_VERSION       v="11.2.0.4.0"/>
+    ...
+```
+dbtools use these xml data to check db's health(show in gif):
+![iamge](https://github.com/dbworker/dbtools-rule/blob/main/dbtools-usage-sample.gif)
+
 
 Currently dbcollect support Oracle(>= 11g) on (Linux, AIX).
 
