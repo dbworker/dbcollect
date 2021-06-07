@@ -20,7 +20,7 @@ For example, dbcollect will dump some data like this
     ...
 ```
 dbtools use these xml data to check db's health(show in gif):
-![iamge](https://github.com/dbworker/dbtools-rule/blob/main/dbtools-usage-sample.gif)
+![iamge](https://github.com/dbworker/dbtools-rule/raw/HEAD/dbtools-usage-sample.gif)
 
 
 Currently dbcollect support Oracle(>= 11g) on (Linux, AIX).
