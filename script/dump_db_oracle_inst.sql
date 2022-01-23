@@ -184,7 +184,7 @@ prompt </HC_REDO_SWITCH_COUNT>
 prompt <HC_DATA_FILES>
 col file_name for a50
 col Size_MB for 999999
-col TABLESPACE_NAME for a15
+col TABLESPACE_NAME for a25
 select '   ' X_X,substr(file_name,1,50) file_name, bytes/1024/1024 Size_MB, tablespace_name,AUTOEXTENSIBLE auto
   from dba_data_files where rownum<=20;
 prompt </HC_DATA_FILES>
@@ -301,7 +301,7 @@ col SCHEMA_NAME for a10
 col RANKING for 99999
 col COUNTS for 9999999
 prompt <HC_SQL_NOT_BIND>
-with force_mathces as
+with force_matches as
  (select l.force_matching_signature,
          max(l.sql_id || l.child_number) max_sql_child,
          dense_rank() over(order by count(*) desc) ranking,
@@ -316,7 +316,7 @@ select '   ' X_X,v.sql_id,
        v.parsing_schema_name schema_name,
        fm.ranking,
        fm.counts
-  from force_mathces fm, v$sql v
+  from force_matches fm, v$sql v
  where fm.max_sql_child = (v.sql_id || v.child_number)
    and fm.ranking <= 50
    and rownum < 10
@@ -359,9 +359,12 @@ select '    <HC_MAX_PARALLELS    v="' || max_utilization||'"/>' from v$resource_
 variable v_instnum number;
 variable v_beginid number;
 variable v_endid number;
+variable v_dbid number;
+
 
 exec select instance_number into :v_instnum from v$instance;
 exec select min(snap_id), max(snap_id) into :v_beginid, :v_endid from dba_hist_snapshot where instance_number=:v_instnum and end_interval_time between trunc(sysdate-1) and trunc(sysdate);
+exec select dbid into :v_dbid from v$database;
 
 -- TODO: if snap interval is half-hour then some calculate is wrong
 set heading on
@@ -379,13 +382,13 @@ from
     select snap_id, (value - (lag(value, 1, null) over(order by snap_id)))/1000000 diff
     from dba_hist_sys_time_model 
     where instance_number = :v_instnum and snap_id between :v_beginid and :v_endid
-    and stat_name= 'DB time'
+    and dbid = :v_dbid and stat_name= 'DB time'
 ) X,
 (
     select snap_id, (value - (lag(value, 1, null) over(order by snap_id)))/1000000 diff
     from dba_hist_sys_time_model 
     where instance_number = :v_instnum and snap_id between :v_beginid and :v_endid
-    and stat_name= 'DB CPU'
+    and dbid = :v_dbid and stat_name= 'DB CPU'
 ) Y,
 (
     select snap_id,
@@ -393,7 +396,7 @@ from
     ( (time_waited_micro - lag(time_waited_micro, 1, null) over(order by snap_id))/1000 ) rd_t
     from dba_hist_system_event
     where instance_number = :v_instnum and snap_id between :v_beginid and :v_endid
-    and event_name = 'db file sequential read'
+    and dbid = :v_dbid and event_name = 'db file sequential read'
 ) Z,
 (
     select snap_id,
@@ -401,9 +404,10 @@ from
     ( (time_waited_micro - lag(time_waited_micro, 1, null) over(order by snap_id))/1000 ) wr_t
     from dba_hist_system_event
     where instance_number = :v_instnum and snap_id between :v_beginid and :v_endid
-    and event_name = 'log file sync'
+    and dbid = :v_dbid and event_name = 'log file sync'
 ) W, dba_hist_snapshot sp
-where sp.instance_number = :v_instnum
+where sp.instance_number = :v_instnum and sp.snap_id between :v_beginid and :v_endid
+and sp.dbid = :v_dbid
 and sp.snap_id = X.snap_id
 and sp.snap_id = Y.snap_id
 and sp.snap_id = Z.snap_id
@@ -423,33 +427,34 @@ from
     select snap_id, (value - (lag(value, 1, null) over(order by snap_id)))/3600 diff
     from dba_hist_sysstat
     where instance_number = :v_instnum and snap_id between :v_beginid and :v_endid
-    and stat_name= 'consistent gets'
+    and dbid = :v_dbid and stat_name= 'consistent gets'
 )X,
 (
     select snap_id, (value - (lag(value, 1, null) over(order by snap_id)))/3600 diff
     from dba_hist_sysstat
     where instance_number = :v_instnum and snap_id between :v_beginid and :v_endid
-    and stat_name= 'db block changes'
+    and dbid = :v_dbid and  stat_name= 'db block changes'
 )Y,
 (
     select snap_id, (value - (lag(value, 1, null) over(order by snap_id)))/3600 diff
     from dba_hist_sysstat
     where instance_number = :v_instnum and snap_id between :v_beginid and :v_endid
-    and stat_name= 'logons cumulative'
+    and dbid = :v_dbid and stat_name= 'logons cumulative'
 )Z,
 (
     select snap_id, (value - (lag(value, 1, null) over(order by snap_id)))/3600 diff
     from dba_hist_sysstat
     where instance_number = :v_instnum and snap_id between :v_beginid and :v_endid
-    and stat_name= 'user commits'
+    and dbid = :v_dbid and stat_name= 'user commits'
 )W,
 (
     select snap_id, (value - (lag(value, 1, null) over(order by snap_id)))/3600 diff
     from dba_hist_sysstat
     where instance_number = :v_instnum and snap_id between :v_beginid and :v_endid
-    and stat_name= 'transaction rollbacks'
+    and dbid = :v_dbid and stat_name= 'transaction rollbacks'
 )V, dba_hist_snapshot sp
-where sp.instance_number = :v_instnum
+where sp.instance_number = :v_instnum and sp.snap_id between :v_beginid and :v_endid
+and sp.dbid = :v_dbid
 and sp.snap_id = X.snap_id
 and sp.snap_id = Y.snap_id
 and sp.snap_id = Z.snap_id
@@ -474,20 +479,27 @@ select '  <DB_CLUSTER>' from dual;
 variable v_instcnt number;
 exec select count(1) into :v_instcnt from gv$instance;
 
+-- TODO
 select '    <HC_RAC_BLOCKS_LOST  v="' || max(value) || '"/>'
-    from dba_hist_sysstat where stat_name ='gc blocks lost' and  rownum=1;
+    from dba_hist_sysstat where dbid = :v_dbid and instance_number = :v_instnum
+    and stat_name ='gc blocks lost' and :v_instcnt > 1 and  rownum=1;
 
 set heading on
 prompt <HC_RAC_BLOCKLOST_DAILY>
-select '   ' X_X,to_char(trunc(end_interval_time), 'yyyy-mm-dd') snaptime, sum(value) lost
-from dba_hist_sysstat a, dba_hist_snapshot b
-where a.instance_number = :v_instnum and b.instance_number = :v_instnum
-and stat_name ='gc blocks lost'
-and end_interval_time between trunc(sysdate-8) and trunc(sysdate)
-and a.snap_id = b.snap_id
-and :v_instcnt > 1
-group by trunc(end_interval_time)
-order by 1;
+select '   ' X_X,to_char(end_interval_time, 'yyyy-mm-dd') snaptime,
+round((value - (lag(value, 1, null) over(order by snap_id)))) lost
+from
+(
+    select a.snap_id, end_interval_time, value value
+    from dba_hist_sysstat a, dba_hist_snapshot b
+    where a.dbid = :v_dbid and b.dbid = :v_dbid
+    and a.instance_number = :v_instnum and b.instance_number = :v_instnum
+    and stat_name ='gc blocks lost'
+    and end_interval_time between trunc(sysdate-8) and trunc(sysdate)
+    and a.snap_id = b.snap_id
+    and to_char(end_interval_time, 'hh24') = '00'
+    and :v_instcnt > 1
+);
 prompt </HC_RAC_BLOCKLOST_DAILY>
 
 prompt <HC_RAC_TRAFFIC_MB_HOURLY>
@@ -496,9 +508,9 @@ round((value - (lag(value, 1, null) over(order by snap_id)))*8192/1048576/3600) 
 from
 (
     select a.snap_id, end_interval_time, sum(value) value
-    from dba_hist_sysstat a, dba_hist_snapshot b, v$instance c
-    where c.instance_number = a.instance_number
-    and c.instance_number = b.instance_number
+    from dba_hist_sysstat a, dba_hist_snapshot b
+    where a.dbid = :v_dbid and b.dbid = :v_dbid
+    and a.instance_number = :v_instnum and b.instance_number = :v_instnum
     and (stat_name like 'gc%blocks received' or stat_name like 'gc%blocks served')
     and end_interval_time between trunc(sysdate-1) and trunc(sysdate)
     and a.snap_id = b.snap_id
