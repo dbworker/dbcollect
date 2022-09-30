@@ -276,7 +276,7 @@ select * from (
 ) where rownum<=5;
 prompt </HC_INDEX_OVERMUCH>
 
--- other object
+-- sequence
 set heading off
 select '    <HC_DB_NOCACHE_BIG_SEQ v="'|| nvl(count(1),0)||'"/>' from dba_sequences 
     where cache_size=0 and LAST_NUMBER > 100000
@@ -293,6 +293,23 @@ select * from (
     order by LAST_NUMBER desc
 ) where rownum<=5;
 prompt </HC_DB_NOCACHE_SEQS>
+
+set heading off
+select '    <HC_SEQ_HIGH_PCTUSED_COUNT v="'|| nvl(count(1),0)||'"/>' from dba_sequences 
+    where last_number/max_value > 0.55;
+
+set heading on
+col CACHE for 99999
+col PCTUSED for a5
+prompt <HC_HIGH_PCTUSED_SEQS>
+select * from (
+    select '   ' X_X, SEQUENCE_OWNER, SEQUENCE_NAME, MAX_VALUE, CYCLE_FLAG,
+    ORDER_FLAG, CACHE_SIZE CACHE, LAST_NUMBER,
+    to_char((last_number/max_value),'0.99') PCTUSED from dba_sequences
+    where last_number/max_value > 0.55
+    order by PCTUSED desc
+) where rownum<=10;
+prompt </HC_HIGH_PCTUSED_SEQS>
 
 -- sql
 col SQL_ID for a20
@@ -482,7 +499,8 @@ exec select count(1) into :v_instcnt from gv$instance;
 -- TODO
 select '    <HC_RAC_BLOCKS_LOST  v="' || max(value) || '"/>'
     from dba_hist_sysstat where dbid = :v_dbid and instance_number = :v_instnum
-    and stat_name ='gc blocks lost' and :v_instcnt > 1 and  rownum=1;
+    and stat_name ='gc blocks lost' and :v_instcnt > 1
+    and snap_id > :v_beginid;
 
 set heading on
 prompt <HC_RAC_BLOCKLOST_DAILY>

@@ -136,6 +136,10 @@ currently v0.3.0 has some fault:
 
 # 7. Release history
 
+**v0.3.1 at 30-Seq-2022**
+- add items `HC_SEQ_HIGH_PCTUSED_COUNT` and `HC_HIGH_PCTUSED_SEQS` to monitor sequences whether close to max limit.
+
+
 **v0.3.0 at 20-May-2021**
 - add more dump item
 - in alert file, some unimportanted log was removed ( not valid for oracle12.2's uniform time format ).
