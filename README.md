@@ -136,8 +136,12 @@ currently v0.3.0 has some fault:
 
 # 7. Release history
 
-**v0.3.1 at 30-Seq-2022**
+**v0.3.2 at 30-Seq-2022**
 - add items `HC_SEQ_HIGH_PCTUSED_COUNT` and `HC_HIGH_PCTUSED_SEQS` to monitor sequences whether close to max limit.
+
+
+**v0.3.1 at 20-Seq-2021**
+- add script `hccdump_sun.sh` to support SunOS.
 
 
 **v0.3.0 at 20-May-2021**

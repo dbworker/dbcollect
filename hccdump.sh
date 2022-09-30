@@ -9,8 +9,8 @@
 #  FOR SAFETY, ONLY RUN 'hccdump.sh' IN INSTALL DIRECTORY.
 #  ONLY USE `rm` WITH A SPECIFIED FILE.
 #**********************************************************
-mVersion="0.3.0"
-mRelease="20210518"
+mVersion="0.3.2"
+mRelease="20220930"
 
 # for safety, only run hccdump.sh in install directory
 if [ "$0" != "hccdump.sh"  ]; then
