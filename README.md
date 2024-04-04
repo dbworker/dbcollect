@@ -25,7 +25,7 @@ dbtools use these xml data to check db's health(show in gif):
 
 Currently dbcollect support Oracle(>= 11g) on (Linux, AIX).
 
-Be a happy DBA: https://www.youtube.com/watch?v=05H3M8m__4o&ab_channel=dbworker
+
 
 # 2. How to use dbcollect
 
